@@ -20,8 +20,7 @@ export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
   }
 
   return (
-    <div className="group relative flex flex-col bg-surface-container-lowest/30 backdrop-blur-sm shadow-xl transition-all duration-500 hover:-translate-y-2">
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-on-surface/15 to-transparent"></div>
+    <div className="group relative flex flex-col bg-surface-container-low/40 backdrop-blur-md rounded-xl border border-white/5 overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
       
       <div className="relative aspect-square overflow-hidden bg-surface-container">
         {item.artworkUrl ? (
@@ -61,7 +60,7 @@ export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
         </div>
       </div>
       
-      <div className="p-6 flex flex-col gap-4">
+      <div className="p-6 sm:p-8 flex flex-col gap-4">
         <div className="flex justify-between items-start">
           <h3 className="font-headline-lg text-[22px] text-on-surface leading-tight tracking-tight truncate">
             {item.title}

@@ -22,12 +22,13 @@ export function NavigationItem({ href, icon, label, onClick }: NavigationItemPro
         href={href}
         onClick={onClick}
         aria-current="page"
-        className="group flex items-center px-md py-sm rounded-lg transition-all duration-300 bg-surface-container-highest/60 text-primary border-l-2 border-primary"
+        className="group relative flex items-center px-4 py-2.5 rounded-lg transition-all duration-300 bg-gradient-to-r from-primary/10 to-transparent text-primary overflow-hidden"
       >
-        <span className="mr-md text-primary transition-colors flex items-center justify-center w-5 h-5">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-primary rounded-r-sm"></div>
+        <span className="mr-3 text-primary transition-colors flex items-center justify-center w-5 h-5">
           {icon}
         </span>
-        <span className="font-body-md font-medium">{label}</span>
+        <span className="font-body-md font-medium tracking-wide">{label}</span>
       </Link>
     );
   }
@@ -36,12 +37,12 @@ export function NavigationItem({ href, icon, label, onClick }: NavigationItemPro
     <Link
       href={href}
       onClick={onClick}
-      className="group flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high/40 hover:text-on-surface transition-all duration-300 border-l-2 border-transparent"
+      className="group relative flex items-center px-4 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all duration-300"
     >
-      <span className="mr-md group-hover:text-primary transition-colors flex items-center justify-center w-5 h-5">
+      <span className="mr-3 group-hover:text-primary/80 transition-colors flex items-center justify-center w-5 h-5 opacity-70 group-hover:opacity-100">
         {icon}
       </span>
-      <span className="font-body-md">{label}</span>
+      <span className="font-body-md tracking-wide">{label}</span>
     </Link>
   );
 }

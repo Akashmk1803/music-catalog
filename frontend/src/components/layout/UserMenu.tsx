@@ -4,15 +4,15 @@ import { User } from 'lucide-react';
 
 export function UserMenu() {
   return (
-    <div className="mt-auto p-md">
-      <div className="bg-surface-container/30 rounded-xl p-md border border-outline-variant/10 flex items-center gap-md">
-        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
-          <User className="text-on-primary w-5 h-5" />
+    <div className="mt-auto p-6">
+      <div className="bg-surface-container-low/50 hover:bg-surface-container-low/80 transition-colors duration-300 rounded-xl p-4 border border-outline-variant/10 flex items-center gap-3 cursor-pointer group">
+        <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 group-hover:border-primary/40 transition-colors">
+          <User className="text-primary w-4 h-4" />
         </div>
         <div className="overflow-hidden">
-          <p className="text-body-sm font-semibold text-on-surface truncate">User</p>
-          <span className="px-sm py-[2px] bg-primary-container/20 text-primary text-[10px] font-label-caps rounded uppercase inline-block mt-0.5">
-            Member
+          <p className="text-body-sm font-medium text-on-surface truncate tracking-wide">User</p>
+          <span className="px-2 py-[2px] bg-primary/10 text-primary text-[9px] font-label-caps rounded uppercase inline-block mt-1 tracking-widest">
+            Executive
           </span>
         </div>
       </div>

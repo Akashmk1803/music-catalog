@@ -36,7 +36,7 @@ export function SongCard({ song }: SongCardProps) {
   };
 
   return (
-    <div className="group relative bg-surface-container-low/40 backdrop-blur-xl border-t border-white/10 rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:bg-surface-container-high/60 flex flex-col">
+    <div className="group relative bg-surface-container-low/40 backdrop-blur-md border border-white/5 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-surface-container-high/40 flex flex-col">
       <div className="aspect-square w-full overflow-hidden relative">
         {song.artworkUrl ? (
           <img 
@@ -55,7 +55,7 @@ export function SongCard({ song }: SongCardProps) {
         </div>
       </div>
       
-      <div className="p-6 flex flex-col flex-1">
+      <div className="p-6 sm:p-8 flex flex-col flex-1">
         <div className="flex justify-between items-start mb-4 gap-4">
           <div className="overflow-hidden">
             <h3 className="font-headline-md text-[20px] text-on-surface mb-xs group-hover:text-primary transition-colors truncate">

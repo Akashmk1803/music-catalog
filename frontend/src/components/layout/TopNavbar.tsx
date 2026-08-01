@@ -30,23 +30,23 @@ export function TopNavbar({ onMenuClick }: TopNavbarProps) {
           </div>
         </div>
 
-        <div className="flex items-center gap-sm lg:gap-lg">
-          <div className="hidden md:flex items-center gap-sm bg-surface-container-high/40 px-md py-xs rounded-full border border-outline-variant/10 text-on-surface-variant cursor-text hover:border-primary/30 transition-colors">
-            <Search size={18} />
-            <span className="text-body-sm font-label-caps uppercase tracking-widest">Search...</span>
-            <span className="ml-xl text-[10px] bg-surface-container-highest px-sm py-[1px] rounded font-data-md">⌘K</span>
+        <div className="flex items-center gap-2 lg:gap-4">
+          <div className="hidden md:flex items-center bg-surface-container-high/40 px-4 py-2 rounded-full border border-outline-variant/10 text-on-surface-variant cursor-text hover:bg-surface-container-high/60 transition-colors">
+            <Search size={16} className="text-on-surface-variant/70" />
+            <span className="text-body-sm font-label-caps uppercase tracking-widest text-[11px] ml-2">Search</span>
+            <span className="ml-8 text-[9px] bg-surface-container-highest px-1.5 py-[2px] rounded font-data-md opacity-60">⌘K</span>
           </div>
-          <button className="md:hidden w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
-            <Search size={20} />
+          <button className="md:hidden w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors">
+            <Search size={18} />
           </button>
           
-          <div className="flex items-center gap-xs lg:gap-md">
-            <button className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors relative group">
-              <Bell size={20} />
-              <span className="absolute top-2 right-2.5 w-2 h-2 bg-primary rounded-full border border-background"></span>
+          <div className="flex items-center gap-1 lg:gap-2">
+            <button className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors relative group">
+              <Bell size={18} />
+              <span className="absolute top-[11px] right-[11px] w-[6px] h-[6px] bg-primary rounded-full"></span>
             </button>
-            <button className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <Settings size={20} />
+            <button className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors">
+              <Settings size={18} />
             </button>
           </div>
         </div>

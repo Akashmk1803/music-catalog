@@ -2,7 +2,7 @@ export function LibrarySkeleton() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-xxl mt-xxl">
       {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-        <div key={i} className="skeleton-card flex flex-col bg-surface-container-lowest/30 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden animate-pulse">
+        <div key={i} className="skeleton-card flex flex-col bg-surface-container-low/40 backdrop-blur-md rounded-xl border border-white/5 overflow-hidden shadow-lg animate-pulse">
           <div className="aspect-square w-full bg-surface-container-high/40"></div>
           <div className="p-lg space-y-md">
             <div className="flex justify-between items-start">

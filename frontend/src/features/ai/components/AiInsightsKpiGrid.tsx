@@ -14,7 +14,7 @@ export function AiInsightsKpiGrid({ data }: AiInsightsKpiGridProps) {
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       {/* Favorite Genre */}
-      <div className="bg-surface-container-high/30 backdrop-blur-md p-6 rounded-xl border-t border-white/5 flex flex-col justify-between group hover:bg-surface-container-highest/40 transition-all duration-500">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between group hover:bg-surface-container-high/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
         <div className="flex justify-between items-start">
           <Shapes className="text-primary/60" size={24} />
         </div>
@@ -25,7 +25,7 @@ export function AiInsightsKpiGrid({ data }: AiInsightsKpiGridProps) {
       </div>
 
       {/* Average Rating */}
-      <div className="bg-surface-container-high/30 backdrop-blur-md p-6 rounded-xl border-t border-white/5 flex flex-col justify-between group hover:bg-surface-container-highest/40 transition-all duration-500">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between group hover:bg-surface-container-high/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
         <div className="flex justify-between items-start">
           <StarHalf className="text-primary/60" size={24} />
         </div>
@@ -39,7 +39,7 @@ export function AiInsightsKpiGrid({ data }: AiInsightsKpiGridProps) {
       </div>
 
       {/* Total Songs */}
-      <div className="bg-surface-container-high/30 backdrop-blur-md p-6 rounded-xl border-t border-white/5 flex flex-col justify-between group hover:bg-surface-container-highest/40 transition-all duration-500">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between group hover:bg-surface-container-high/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
         <div className="flex justify-between items-start">
           <Library className="text-primary/60" size={24} />
         </div>
@@ -50,7 +50,7 @@ export function AiInsightsKpiGrid({ data }: AiInsightsKpiGridProps) {
       </div>
 
       {/* Completed Songs */}
-      <div className="bg-surface-container-high/30 backdrop-blur-md p-6 rounded-xl border-t border-white/5 flex flex-col justify-between group hover:bg-surface-container-highest/40 transition-all duration-500">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between group hover:bg-surface-container-high/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
         <div className="flex justify-between items-start">
           <CheckCircle className="text-primary/60" size={24} />
         </div>
@@ -61,7 +61,7 @@ export function AiInsightsKpiGrid({ data }: AiInsightsKpiGridProps) {
       </div>
 
       {/* Listening Songs */}
-      <div className="bg-surface-container-high/30 backdrop-blur-md p-6 rounded-xl border-t border-white/5 flex flex-col justify-between group hover:bg-surface-container-highest/40 transition-all duration-500">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between group hover:bg-surface-container-high/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
         <div className="flex justify-between items-start">
           <Headphones className="text-primary/60" size={24} />
         </div>
@@ -72,7 +72,7 @@ export function AiInsightsKpiGrid({ data }: AiInsightsKpiGridProps) {
       </div>
 
       {/* Planned Songs */}
-      <div className="bg-surface-container-high/30 backdrop-blur-md p-6 rounded-xl border-t border-white/5 flex flex-col justify-between group hover:bg-surface-container-highest/40 transition-all duration-500">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 flex flex-col justify-between group hover:bg-surface-container-high/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
         <div className="flex justify-between items-start">
           <CalendarClock className="text-primary/60" size={24} />
         </div>
