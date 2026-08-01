@@ -53,7 +53,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="px-xl py-xl flex items-center justify-between gap-sm">
+        <div className="px-8 py-8 flex items-center justify-between gap-sm">
           <Link href="/dashboard" className="flex items-center gap-sm group">
             {/* Keeping the image from Stitch design */}
             <img 
@@ -71,7 +71,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           </button>
         </div>
 
-        <nav className="flex-1 flex flex-col gap-xs px-md mt-sm overflow-y-auto">
+        <nav className="flex-1 flex flex-col gap-2 px-6 mt-4 overflow-y-auto">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
             return (

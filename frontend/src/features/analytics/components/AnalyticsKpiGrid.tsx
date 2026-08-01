@@ -18,9 +18,9 @@ export function AnalyticsKpiGrid({ overview, favoriteGenre }: AnalyticsKpiGridPr
   const planned = overview?.plannedSongs ?? 0;
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {/* Total Songs */}
-      <div className="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-6 border-t border-white/10 flex flex-col gap-4 hover:bg-surface-container-high/60 transition-all duration-300">
         <div className="flex justify-between items-start">
           <Library className="text-primary" size={24} />
         </div>
@@ -31,7 +31,7 @@ export function AnalyticsKpiGrid({ overview, favoriteGenre }: AnalyticsKpiGridPr
       </div>
 
       {/* Average Rating */}
-      <div className="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-6 border-t border-white/10 flex flex-col gap-4 hover:bg-surface-container-high/60 transition-all duration-300">
         <div className="flex justify-between items-start">
           <StarHalf className="text-primary" size={24} />
         </div>
@@ -42,7 +42,7 @@ export function AnalyticsKpiGrid({ overview, favoriteGenre }: AnalyticsKpiGridPr
       </div>
 
       {/* Favorite Genre */}
-      <div className="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-6 border-t border-white/10 flex flex-col gap-4 hover:bg-surface-container-high/60 transition-all duration-300">
         <div className="flex justify-between items-start">
           <Shapes className="text-primary" size={24} />
         </div>
@@ -53,7 +53,7 @@ export function AnalyticsKpiGrid({ overview, favoriteGenre }: AnalyticsKpiGridPr
       </div>
 
       {/* Completed Songs */}
-      <div className="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-6 border-t border-white/10 flex flex-col gap-4 hover:bg-surface-container-high/60 transition-all duration-300">
         <div className="flex justify-between items-start">
           <CheckCircle className="text-primary" size={24} />
         </div>
@@ -64,7 +64,7 @@ export function AnalyticsKpiGrid({ overview, favoriteGenre }: AnalyticsKpiGridPr
       </div>
 
       {/* Listening Songs */}
-      <div className="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-6 border-t border-white/10 flex flex-col gap-4 hover:bg-surface-container-high/60 transition-all duration-300">
         <div className="flex justify-between items-start">
           <Headphones className="text-primary" size={24} />
         </div>
@@ -75,7 +75,7 @@ export function AnalyticsKpiGrid({ overview, favoriteGenre }: AnalyticsKpiGridPr
       </div>
 
       {/* Planned Songs */}
-      <div className="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+      <div className="bg-surface-container-low/40 backdrop-blur-md p-6 border-t border-white/10 flex flex-col gap-4 hover:bg-surface-container-high/60 transition-all duration-300">
         <div className="flex justify-between items-start">
           <CalendarClock className="text-primary" size={24} />
         </div>

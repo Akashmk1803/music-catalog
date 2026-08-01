@@ -4,11 +4,10 @@ import { BellOff } from 'lucide-react';
 
 export default function NotificationsPage() {
   return (
-    <div className="pt-20 px-margin min-h-screen bg-transparent">
-      <div className="flex flex-col w-full max-w-5xl mx-auto py-xl h-full">
+    <div className="flex flex-col w-full h-full gap-12">
         
         {/* Header Section */}
-        <div className="flex items-end justify-between mb-xxl relative z-10">
+        <div className="flex items-end justify-between relative z-10">
           <div className="flex flex-col gap-sm">
             <span className="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase">Activity Stream</span>
             <h2 className="font-display-lg text-display-lg text-on-surface">Intelligence Center</h2>
@@ -29,7 +28,6 @@ export default function NotificationsPage() {
           </p>
         </div>
 
-      </div>
     </div>
   );
 }

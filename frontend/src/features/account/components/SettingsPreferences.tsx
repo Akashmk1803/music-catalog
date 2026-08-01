@@ -11,9 +11,9 @@ export function SettingsPreferences() {
   return (
     <>
       {/* Preferences Section */}
-      <section className="bg-surface-container-low/45 backdrop-blur-xxl p-xl rounded-xl shadow-xl border-t border-white/5" id="preferences">
-        <h2 className="font-headline-md text-headline-md text-on-surface mb-lg">Preferences</h2>
-        <div className="space-y-lg">
+      <section className="bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5" id="preferences">
+        <h2 className="font-headline-md text-headline-md text-on-surface mb-8">Preferences</h2>
+        <div className="space-y-8">
           
           {/* Interface Theme */}
           <div className="flex items-center justify-between pb-lg border-b border-outline-variant/10">
@@ -56,11 +56,11 @@ export function SettingsPreferences() {
       </section>
 
       {/* Security & Privacy Section */}
-      <section className="bg-surface-container-low/45 backdrop-blur-xxl p-xl rounded-xl shadow-xl border-t border-white/5" id="privacy">
-        <h2 className="font-headline-md text-headline-md text-on-surface mb-lg">Security & Privacy</h2>
-        <div className="space-y-lg">
+      <section className="bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5" id="privacy">
+        <h2 className="font-headline-md text-headline-md text-on-surface mb-8">Security & Privacy</h2>
+        <div className="space-y-8">
           
-          <div className="flex items-center justify-between p-lg bg-surface-container-highest/20 rounded-xl">
+          <div className="flex items-center justify-between p-6 bg-surface-container-highest/20 rounded-xl">
             <div className="flex gap-lg items-start">
               <KeyRound className="text-primary mt-1" size={24} />
               <div>
@@ -74,7 +74,7 @@ export function SettingsPreferences() {
             </label>
           </div>
 
-          <div className="flex items-center justify-between p-lg bg-surface-container-highest/20 rounded-xl">
+          <div className="flex items-center justify-between p-6 bg-surface-container-highest/20 rounded-xl">
             <div className="flex gap-lg items-start">
               <EyeOff className="text-primary mt-1" size={24} />
               <div>
@@ -92,8 +92,8 @@ export function SettingsPreferences() {
       </section>
 
       {/* Notifications Section */}
-      <section className="bg-surface-container-low/45 backdrop-blur-xxl p-xl rounded-xl shadow-xl border-t border-white/5" id="notifications">
-        <h2 className="font-headline-md text-headline-md text-on-surface mb-lg">Notification Streams</h2>
+      <section className="bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5" id="notifications">
+        <h2 className="font-headline-md text-headline-md text-on-surface mb-8">Notification Streams</h2>
         <table className="w-full text-left">
           <thead>
             <tr className="border-b border-outline-variant/10">
@@ -130,7 +130,7 @@ export function SettingsPreferences() {
       </section>
 
       {/* Danger Zone */}
-      <section className="mt-xl p-xl bg-error/5 border border-error/20 rounded-xl">
+      <section className="mt-12 p-8 bg-error/5 border border-error/20 rounded-xl">
         <h2 className="font-headline-md text-headline-md text-error mb-sm">Sensitive Operations</h2>
         <p className="text-body-md text-on-surface-variant mb-lg">Deleting your account or purging data is irreversible. Please proceed with utmost caution.</p>
         <div className="flex gap-md">

@@ -29,14 +29,14 @@ export function AiSummaryPanel({ summary, updatedAt, onRefresh, isRefetching }: 
   const timeAgo = formatDistanceToNow(updatedAt, { addSuffix: true });
 
   return (
-    <section className="relative w-full mb-xxl">
+    <section className="relative w-full">
       {/* Glow Effect */}
       <div className="absolute -top-12 -left-8 w-64 h-64 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
       
-      <div className="relative bg-surface-container-low/40 backdrop-blur-xxl rounded-xl p-xl lg:p-xxl border-t border-white/10 shadow-xl overflow-hidden">
-        <div className="flex flex-col gap-lg max-w-4xl relative z-10">
+      <div className="relative bg-surface-container-low/40 backdrop-blur-xxl rounded-xl p-8 sm:p-12 border-t border-white/10 shadow-xl overflow-hidden">
+        <div className="flex flex-col gap-8 max-w-4xl relative z-10">
           
-          <div className="flex flex-wrap items-center justify-between gap-md mb-md">
+          <div className="flex flex-wrap items-center justify-between gap-6 mb-6">
             <div className="flex flex-wrap items-center gap-md">
               <div className="px-md py-xs rounded-full border border-primary text-primary flex items-center gap-sm bg-transparent">
                 <Sparkles size={12} />
@@ -67,7 +67,7 @@ export function AiSummaryPanel({ summary, updatedAt, onRefresh, isRefetching }: 
             </div>
           </div>
 
-          <div className="mt-md">
+          <div className="mt-6">
             <div className="font-headline-md text-headline-md text-on-surface leading-relaxed whitespace-pre-wrap">
               {summary}
             </div>

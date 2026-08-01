@@ -61,7 +61,7 @@ export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
         </div>
       </div>
       
-      <div className="p-lg flex flex-col gap-sm">
+      <div className="p-6 flex flex-col gap-4">
         <div className="flex justify-between items-start">
           <h3 className="font-headline-lg text-[22px] text-on-surface leading-tight tracking-tight truncate">
             {item.title}

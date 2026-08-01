@@ -105,9 +105,9 @@ export function RegisterForm() {
         <div className="absolute -bottom-[10%] -left-[5%] w-[400px] h-[400px] bg-tertiary-container/10 rounded-full blur-[100px] mix-blend-screen opacity-30 animate-[pulse_12s_ease-in-out_infinite]"></div>
       </div>
       
-      <div className="relative z-10 flex flex-col gap-xl">
+      <div className="relative z-10 flex flex-col gap-12 p-8 sm:p-12 glass-panel bg-surface-container-low/45 rounded-xxl border-t border-[#EDE8DD]/15 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)]">
         {/* Header/Logo Area */}
-        <div className="flex flex-col items-center text-center space-y-md">
+        <div className="flex flex-col items-center text-center gap-4">
           <div className="relative group">
             <span className="font-display-lg text-[48px] leading-[1.1] font-light tracking-[-0.02em] text-primary uppercase tracking-widest">Catalog</span>
             <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
@@ -116,7 +116,7 @@ export function RegisterForm() {
         </div>
         
         {/* Registration Form */}
-        <form className="flex flex-col gap-lg" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-8" onSubmit={handleSubmit(onSubmit)}>
           {/* Name Field */}
           <div className="flex flex-col gap-sm">
             <label className="font-label-caps font-semibold text-[12px] text-on-surface-variant/70 uppercase tracking-widest" htmlFor="full-name">
@@ -236,7 +236,7 @@ export function RegisterForm() {
           </div>
 
           {/* CTA Section */}
-          <div className="flex flex-col gap-md pt-md">
+          <div className="flex flex-col gap-6 pt-8">
             <button
               disabled={isPending}
               className="group relative w-full bg-primary py-lg flex items-center justify-center overflow-hidden hover:brightness-110 transition-all active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
@@ -259,7 +259,7 @@ export function RegisterForm() {
         </form>
         
         {/* Footer Metadata */}
-        <div className="mt-lg pt-lg border-t border-outline-variant/10 flex justify-between items-center">
+        <div className="mt-12 pt-8 border-t border-outline-variant/10 flex justify-between items-center">
           <div className="flex flex-col">
             <span className="font-label-caps font-semibold text-[10px] text-outline-variant uppercase tracking-widest">Vault Security</span>
             <span className="font-data-md font-medium text-[10px] text-outline tracking-widest">AES-256 ENCRYPTED</span>

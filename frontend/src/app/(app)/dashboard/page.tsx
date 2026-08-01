@@ -8,7 +8,7 @@ export default function DashboardPage() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center gap-xl">
+    <div className="flex flex-col items-center justify-center h-full min-h-[60vh] text-center gap-12">
       <div className="flex flex-col gap-sm">
         <h1 className="font-display-lg text-[48px] text-primary">Dashboard Overview</h1>
         <p className="font-body-md text-on-surface-variant">

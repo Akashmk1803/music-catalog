@@ -24,17 +24,17 @@ export function SettingsAccountForm() {
   return (
     <section className="relative group" id="account">
       <div className="absolute -inset-px bg-gradient-to-r from-primary/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="relative bg-surface-container-low/45 backdrop-blur-xxl p-xl rounded-xl shadow-xl border-t border-white/5">
+      <div className="relative bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5">
         
-        <div className="flex justify-between items-start mb-xl">
+        <div className="flex justify-between items-start mb-8">
           <div>
             <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">Account Profile</h2>
             <p className="font-body-sm text-on-surface-variant">Manage your professional credentials and identity.</p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             <div className="flex flex-col gap-xs">
               <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Full Name</label>
@@ -70,7 +70,7 @@ export function SettingsAccountForm() {
             
           </div>
 
-          <div className="flex justify-end pt-md">
+          <div className="flex justify-end pt-8">
             <button 
               type="submit" 
               disabled={isSubmitting}

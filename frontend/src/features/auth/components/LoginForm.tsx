@@ -69,19 +69,19 @@ export function LoginForm() {
       {/* Main Login Card */}
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Branding Accent */}
-        <div className="mb-xxl flex flex-col items-center gap-sm">
+        <div className="mb-12 flex flex-col items-center gap-4">
           <div className="w-12 h-[1px] bg-primary/40"></div>
           <span className="font-label-caps text-[12px] leading-none text-primary tracking-[0.3em] uppercase font-semibold">Executive Access</span>
         </div>
         
         {/* The Smoked Glass Panel */}
-        <div className="w-full glass-panel bg-surface-container-low/45 rounded-xxl p-margin border-t border-[#EDE8DD]/15 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)]">
-          <header className="mb-xl text-center">
+        <div className="w-full glass-panel bg-surface-container-low/45 rounded-xxl p-8 sm:p-12 border-t border-[#EDE8DD]/15 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)]">
+          <header className="mb-12 text-center">
             <h1 className="font-display-lg text-[48px] leading-[1.1] text-on-surface mb-xs italic font-light tracking-[-0.02em]">Welcome Back</h1>
             <p className="font-body-sm text-[14px] leading-[1.5] text-on-surface-variant/60 tracking-tight">Enter your credentials to access the Catalog.</p>
           </header>
           
-          <form className="flex flex-col gap-lg" onSubmit={handleSubmit(onSubmit)}>
+          <form className="flex flex-col gap-8" onSubmit={handleSubmit(onSubmit)}>
             {/* Email Input */}
             <div className="group relative">
               <label className="font-label-caps font-semibold text-[10px] text-on-surface-variant/50 uppercase mb-xs block ml-unit" htmlFor="email">
@@ -142,7 +142,7 @@ export function LoginForm() {
             {/* Login Button */}
             <button
               disabled={isPending}
-              className="mt-md w-full bg-primary py-lg flex items-center justify-center gap-md group overflow-hidden relative active:scale-[0.98] transition-transform duration-100 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-6 w-full bg-primary py-lg flex items-center justify-center gap-md group overflow-hidden relative active:scale-[0.98] transition-transform duration-100 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <span className="relative z-10 font-label-caps font-semibold text-[12px] text-on-primary tracking-widest uppercase">
                 {isPending ? 'Authenticating...' : 'Establish Connection'}
@@ -159,7 +159,7 @@ export function LoginForm() {
           </form>
           
           {/* Footer Actions */}
-          <footer className="mt-xl pt-lg border-t border-outline-variant/10 flex flex-col items-center gap-md">
+          <footer className="mt-12 pt-8 border-t border-outline-variant/10 flex flex-col items-center gap-md">
             <p className="font-body-sm text-[14px] text-on-surface-variant/40">
               Don&apos;t have an invitation? 
               <Link className="text-on-surface border-b border-on-surface/20 hover:border-primary hover:text-primary transition-all duration-300 ml-xs" href="/register">
@@ -170,7 +170,7 @@ export function LoginForm() {
         </div>
         
         {/* Technical Metadata Decoration */}
-        <div className="mt-xl flex items-center gap-xl opacity-20">
+        <div className="mt-12 flex items-center gap-xl opacity-20">
           <div className="flex items-center gap-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-[pulse-soft_3s_infinite]"></span>
             <span className="font-data-md font-medium text-[10px] text-on-surface uppercase tracking-widest">Secure Server: Lon-01</span>

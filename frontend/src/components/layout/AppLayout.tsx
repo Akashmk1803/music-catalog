@@ -14,7 +14,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="lg:pl-[240px] transition-all duration-300 ease-in-out">
         <TopNavbar onMenuClick={() => setIsSidebarOpen(true)} />
         
-        <main className="relative pt-20 px-md lg:px-margin min-h-screen pb-xl">
+        <main className="relative pt-28 pb-32 px-6 sm:px-10 lg:px-16 w-full max-w-7xl mx-auto min-h-screen">
           {children}
         </main>
       </div>

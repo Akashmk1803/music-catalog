@@ -18,11 +18,11 @@ export function SettingsPasswordForm() {
   };
 
   return (
-    <section className="bg-surface-container-low/45 backdrop-blur-xxl p-xl rounded-xl shadow-xl border-t border-white/5" id="security">
+    <section className="bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5" id="security">
       <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">Password & Security</h2>
-      <p className="font-body-sm text-on-surface-variant mb-xl">Update your password to keep your account secure.</p>
+      <p className="font-body-sm text-on-surface-variant mb-8">Update your password to keep your account secure.</p>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-lg max-w-xl">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 max-w-xl">
         <div className="flex flex-col gap-xs">
           <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Current Password</label>
           <input 
@@ -53,7 +53,7 @@ export function SettingsPasswordForm() {
           {errors.confirmPassword && <span className="text-error text-body-sm mt-1">{errors.confirmPassword.message}</span>}
         </div>
 
-        <div className="flex justify-end pt-md">
+        <div className="flex justify-end pt-8">
           <button 
             type="submit" 
             disabled={isSubmitting}

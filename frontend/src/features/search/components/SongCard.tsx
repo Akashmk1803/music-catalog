@@ -55,8 +55,8 @@ export function SongCard({ song }: SongCardProps) {
         </div>
       </div>
       
-      <div className="p-lg flex flex-col flex-1">
-        <div className="flex justify-between items-start mb-sm gap-sm">
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex justify-between items-start mb-4 gap-4">
           <div className="overflow-hidden">
             <h3 className="font-headline-md text-[20px] text-on-surface mb-xs group-hover:text-primary transition-colors truncate">
               {song.title}
@@ -68,12 +68,12 @@ export function SongCard({ song }: SongCardProps) {
           )}
         </div>
         
-        <div className="flex items-center gap-xs mb-lg mt-auto">
+        <div className="flex items-center gap-2 mb-6 mt-auto">
           <span className="text-label-caps text-on-surface-variant/60 uppercase tracking-tighter">Genre:</span>
           <span className="text-body-sm text-on-surface-variant italic truncate">{song.genre || 'Unknown'}</span>
         </div>
         
-        <div className="grid grid-cols-2 gap-md">
+        <div className="grid grid-cols-2 gap-4">
           <a 
             href={song.previewUrl || '#'} 
             target="_blank" 

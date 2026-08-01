@@ -67,7 +67,7 @@ export default function LibraryPage() {
   const handleDelete = (item: LibraryItem) => setDeleteItem(item);
 
   return (
-    <div className="flex flex-col w-full relative min-h-screen">
+    <div className="flex flex-col w-full h-full gap-12 relative">
       <LibraryToolbar 
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
@@ -77,7 +77,7 @@ export default function LibraryPage() {
         onSortChange={setSortOption}
       />
 
-      <section className="w-full py-xl pb-xxl" id="libraryResults">
+      <section className="w-full" id="libraryResults">
         {isPending ? (
           <LibrarySkeleton />
         ) : isError ? (
@@ -92,7 +92,7 @@ export default function LibraryPage() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-xxl mt-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
               {processedData.map((item) => (
                 <LibraryCard 
                   key={item.id} 
@@ -104,7 +104,7 @@ export default function LibraryPage() {
             </div>
             
             {/* Decorative Footer Metadata */}
-            <div className="mt-xxl pt-xl border-t border-outline-variant/10 flex items-center justify-between opacity-40 group">
+            <div className="mt-12 pt-12 border-t border-outline-variant/10 flex items-center justify-between opacity-40 group">
               <div className="flex items-center gap-lg">
                 <div className="flex flex-col">
                   <span className="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant">

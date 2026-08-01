@@ -7,8 +7,7 @@ import { User, SlidersHorizontal, Shield, Bell } from 'lucide-react';
 
 export default function SettingsPage() {
   return (
-    <div className="pt-20 px-margin min-h-screen bg-transparent">
-      <div className="flex flex-col w-full max-w-6xl mx-auto pb-xxl">
+    <div className="flex flex-col w-full h-full">
         
         {/* Header Section */}
         <div className="flex flex-col gap-sm mb-xxl">
@@ -63,7 +62,6 @@ export default function SettingsPage() {
 
         </div>
 
-      </div>
     </div>
   );
 }

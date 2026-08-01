@@ -39,7 +39,7 @@ export default function AnalyticsPage() {
   // If we're loading, show skeleton
   if (isPending) {
     return (
-      <div className="pt-20 px-margin min-h-screen">
+      <div className="flex flex-col w-full h-full">
         <AnalyticsSkeleton />
       </div>
     );
@@ -48,7 +48,7 @@ export default function AnalyticsPage() {
   // If the overview fails, the whole page fails
   if (overviewQuery.isError) {
     return (
-      <div className="pt-20 px-margin min-h-screen">
+      <div className="flex flex-col w-full h-full">
         <AnalyticsErrorState 
           message="Could not load your analytics overview. Please try again later." 
           onRetry={overviewQuery.refetch} 
@@ -60,7 +60,7 @@ export default function AnalyticsPage() {
   // If the user has no songs, show empty state
   if (overviewQuery.data?.totalSongs === 0) {
     return (
-      <div className="pt-20 px-margin min-h-screen">
+      <div className="flex flex-col w-full h-full">
         <AnalyticsEmptyState />
       </div>
     );
@@ -68,11 +68,10 @@ export default function AnalyticsPage() {
 
   // Otherwise, render the dashboard, with individual error boundaries/fallbacks where appropriate
   return (
-    <div className="pt-20 px-margin min-h-screen bg-transparent">
-      <div className="flex flex-col w-full gap-xxl pb-xxl">
+    <div className="flex flex-col w-full h-full gap-12">
         
         {/* Top Level Stats Bar */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-8 flex flex-col gap-md">
             <div className="flex items-baseline gap-md">
               <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase">Performance Metric</span>
@@ -104,7 +103,7 @@ export default function AnalyticsPage() {
         />
 
         {/* Distribution Analysis */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Genre Distribution */}
           <div className="lg:col-span-7 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm">
             {genresQuery.isError ? (
@@ -125,7 +124,7 @@ export default function AnalyticsPage() {
         </section>
 
         {/* Collection Growth & Status Distribution */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm overflow-hidden relative h-full min-h-[400px]">
             {releaseYearsQuery.isError ? (
               <AnalyticsErrorState message="Could not load release year data." onRetry={releaseYearsQuery.refetch} />
@@ -134,7 +133,7 @@ export default function AnalyticsPage() {
             ) : null}
           </div>
           
-          <div className="lg:col-span-4 flex flex-col gap-gutter">
+          <div className="lg:col-span-4 flex flex-col gap-8">
             <div className="bg-surface-container/30 p-xl border-t border-white/5 rounded-sm flex-1">
               {statusQuery.isError ? (
                 <AnalyticsErrorState message="Could not load status data." onRetry={statusQuery.refetch} />
@@ -154,7 +153,6 @@ export default function AnalyticsPage() {
           </div>
         </section>
 
-      </div>
     </div>
   );
 }

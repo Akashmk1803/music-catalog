@@ -18,11 +18,10 @@ export default function ProfilePage() {
   const totalSongs = overview?.totalSongs ?? 0;
 
   return (
-    <div className="pt-20 px-margin bg-transparent min-h-screen">
-      <div className="flex flex-col w-full pb-xl">
+    <div className="flex flex-col w-full h-full gap-12">
         
         {/* Header Section / Editorial Profile Intro */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end mb-xxl">
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
           <div className="col-span-12 md:col-span-4 lg:col-span-3 relative group">
             <div className="relative aspect-square overflow-hidden rounded-full border-[1px] border-primary/20 p-md bg-surface-container-low shadow-2xl flex items-center justify-center">
               <div className="w-full h-full rounded-full overflow-hidden relative bg-surface-container-high flex items-center justify-center">
@@ -55,7 +54,7 @@ export default function ProfilePage() {
         </section>
 
         {/* Account Artifacts / Bento Data Grid */}
-        <section className="grid grid-cols-12 gap-gutter mb-xxl">
+        <section className="grid grid-cols-12 gap-8">
           
           {/* Email Card */}
           <div className="col-span-12 md:col-span-4 bg-surface-container-low/40 backdrop-blur-xl p-xl relative border-t border-white/5 group overflow-hidden rounded-xl">
@@ -108,7 +107,7 @@ export default function ProfilePage() {
         </section>
 
         {/* Secondary Actions */}
-        <section className="grid grid-cols-12 gap-gutter">
+        <section className="grid grid-cols-12 gap-8">
           <div className="col-span-12 md:col-span-6 lg:col-span-4 lg:col-start-9 flex flex-col justify-end">
             <div className="p-xl bg-surface-container-highest/20 rounded-xl border border-outline-variant/10 text-center">
               <p className="font-body-sm text-on-surface-variant mb-lg">End the current session securely to prevent unauthorized access.</p>
@@ -123,7 +122,6 @@ export default function ProfilePage() {
           </div>
         </section>
         
-      </div>
     </div>
   );
 }

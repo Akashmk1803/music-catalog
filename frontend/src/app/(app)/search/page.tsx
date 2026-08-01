@@ -25,13 +25,13 @@ function SearchPageContent() {
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full h-full gap-12 relative">
       <SearchInput onSearchChange={handleSearchChange} />
 
-      <section className="w-full py-xl" id="resultsSection">
+      <section className="w-full" id="resultsSection">
         {/* Results Header */}
         {query.trim().length > 0 && (
-          <div className="flex items-baseline justify-between mb-xl border-b border-outline-variant/10 pb-md">
+          <div className="flex items-baseline justify-between mb-12 border-b border-outline-variant/10 pb-4">
             <h2 className="font-headline-lg text-headline-lg text-on-surface flex items-baseline">
               Search Results
               {!isPending && songs && (
@@ -64,7 +64,7 @@ function SearchPageContent() {
         ) : songs && songs.length === 0 ? (
           <EmptyState onBrowseAll={handleBrowseAll} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
             {songs?.map((song) => (
               <SongCard key={song.appleCatalogId} song={song} />
             ))}
@@ -73,7 +73,7 @@ function SearchPageContent() {
       </section>
 
       {/* Decorative Sidebar Label */}
-      <div className="fixed right-margin top-1/2 -translate-y-1/2 pointer-events-none z-0 hidden 2xl:block">
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 pointer-events-none z-0 hidden 2xl:block">
         <span className="[writing-mode:vertical-rl] text-label-caps text-on-surface-variant opacity-10 tracking-[1em] uppercase">
           Catalog Music Insights Archive
         </span>

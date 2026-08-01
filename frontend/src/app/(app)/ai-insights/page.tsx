@@ -22,7 +22,7 @@ export default function AiInsightsPage() {
 
   if (isPending && !data) {
     return (
-      <div className="pt-20 px-margin min-h-screen">
+      <div className="flex flex-col w-full h-full">
         <AiSkeleton />
       </div>
     );
@@ -30,7 +30,7 @@ export default function AiInsightsPage() {
 
   if (isError && !data) {
     return (
-      <div className="pt-20 px-margin min-h-screen">
+      <div className="flex flex-col w-full h-full">
         <AiErrorState 
           onRetry={() => refetch()} 
           isRetrying={isRefetching}
@@ -42,7 +42,7 @@ export default function AiInsightsPage() {
   // If totalSongs is 0, the user has no data for Gemini to analyze
   if (data?.totalSongs === 0) {
     return (
-      <div className="pt-20 px-margin min-h-screen">
+      <div className="flex flex-col w-full h-full">
         <AiEmptyState />
       </div>
     );
@@ -51,16 +51,16 @@ export default function AiInsightsPage() {
   if (!data) return null;
 
   return (
-    <div className="pt-20 px-margin min-h-screen bg-transparent">
+    <div className="flex flex-col w-full h-full relative">
       
       {/* Decorative Vertical Label */}
-      <div className="fixed right-margin top-1/2 -translate-y-1/2 hidden xl:block">
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:block">
         <span className="[writing-mode:vertical-rl] font-label-caps text-on-surface-variant/20 tracking-[1em] text-[10px] uppercase pointer-events-none">
           CATALOG × GEMINI INSIGHTS
         </span>
       </div>
 
-      <div className="flex flex-col w-full pb-xxl">
+      <div className="flex flex-col w-full gap-12">
         <AiSummaryPanel 
           summary={data.summary} 
           updatedAt={lastUpdated || new Date()} 
