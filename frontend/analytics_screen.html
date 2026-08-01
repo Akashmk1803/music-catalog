@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;background-color:#101412;}body{overscroll-behavior:none;min-height:100vh;background-image:radial-gradient(circle at 0% 0%, rgba(232, 192, 134, 0.05) 0%, transparent 40%), radial-gradient(circle at 100% 100%, rgba(224, 227, 223, 0.03) 0%, transparent 40%);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#444845","surface-dim":"#101412","on-tertiary-fixed-variant":"#49473f","error":"#ffb4ab","secondary-container":"#444845","primary-fixed-dim":"#e8c086","surface-container-lowest":"#0b0f0d","inverse-on-surface":"#2d312f","on-primary":"#432c00","on-surface":"#e0e3df","on-secondary-fixed":"#181c1a","on-tertiary":"#323029","primary-container":"#b08d57","inverse-primary":"#775928","on-background":"#e0e3df","on-secondary-container":"#b2b6b3","surface-tint":"#e8c086","on-secondary":"#2d312f","surface-container-high":"#272b29","surface-container-low":"#181c1a","surface":"#101412","secondary-fixed":"#e0e3e0","tertiary-fixed-dim":"#cbc6bc","surface-container-highest":"#323633","tertiary-fixed":"#e7e2d7","secondary":"#c4c7c4","outline-variant":"#4e453a","on-error":"#690005","on-primary-fixed":"#281800","surface-variant":"#323633","on-tertiary-container":"#2d2b24","on-primary-container":"#3d2700","on-primary-fixed-variant":"#5d4213","tertiary":"#cbc6bc","primary-fixed":"#ffdeae","secondary-fixed-dim":"#c4c7c4","surface-container":"#1c201e","surface-bright":"#363a38","tertiary-container":"#969289","outline":"#9a8f81","background":"#101412","error-container":"#93000a","primary":"#e8c086","inverse-surface":"#e0e3df","on-tertiary-fixed":"#1d1c15","on-surface-variant":"#d1c5b6","on-error-container":"#ffdad6"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"unit":"8px","gutter":"24px","xxl":"48px","xs":"4px","xl":"32px","md":"16px","sm":"8px","margin":"40px","lg":"24px"},"fontFamily":{"label-caps":["Inter"],"headline-md":["Fraunces"],"data-lg":["IBM Plex Mono"],"display-lg":["Fraunces"],"body-lg":["Inter"],"headline-lg":["Fraunces"],"data-md":["IBM Plex Mono"],"body-sm":["Inter"],"body-md":["Inter"]},"fontSize":{"label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.08em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"1.3","fontWeight":"400"}],"data-lg":["20px",{"lineHeight":"1.2","letterSpacing":"-0.01em","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"300"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"1.2","fontWeight":"400"}],"data-md":["14px",{"lineHeight":"1.2","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"1.5","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-low/40 backdrop-blur-xxl z-50 flex flex-col border-r border-outline-variant/10 shadow-[inset_0_1px_0_0_rgba(237,232,221,0.05)]"><div class="px-xl py-xl flex items-center gap-sm"><img alt="Catalog Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiSiW1AIKVorii8BTmbd4GMOfSk1wv2_OiT23OOBY4RS99XjUxQlbw_ajg62nhvlrTEXtc3ATi50pRTjrSiUBwfOIFHm_r7mRhzGV4_0xoBT79jMnds1cbtXj841oZrTR9BBDRtIg-T7ZOZn6bqYaf73mgmRItGJULTNepiVczYIuP0bxnD4AVPaxQIPS0kKeizZNiJCUY70D3w_8UZWCCzXO0T6BUGb9hPleZv2uzySyhCYRik88"><span class="font-headline-md text-headline-md text-on-surface tracking-tight">Catalog</span></div><nav class="flex-1 flex flex-col gap-xs px-md" data-active-classes="bg-surface-container-highest/60 text-primary border-l-2 border-primary"><a class="group flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high/40 hover:text-on-surface transition-all duration-300" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-md text-[20px] group-hover:text-primary transition-colors">dashboard</span><span class="font-body-md">Dashboard</span></a><a class="group flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high/40 hover:text-on-surface transition-all duration-300" data-path="search" href="#"><span class="material-symbols-outlined mr-md text-[20px] group-hover:text-primary transition-colors">search</span><span class="font-body-md">Search</span></a><a class="group flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high/40 hover:text-on-surface transition-all duration-300" data-path="library" href="#"><span class="material-symbols-outlined mr-md text-[20px] group-hover:text-primary transition-colors">library_music</span><span class="font-body-md">Library</span></a><a aria-current="page" class="group flex items-center px-md py-sm rounded-lg transition-all duration-300 bg-surface-container-highest/60 text-primary border-l-2 border-primary" data-path="analytics" href="#"><span class="material-symbols-outlined mr-md text-[20px] group-hover:text-primary transition-colors">monitoring</span><span class="font-body-md">Analytics</span></a><a class="group flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high/40 hover:text-on-surface transition-all duration-300" data-path="ai-insights" href="#"><span class="material-symbols-outlined mr-md text-[20px] group-hover:text-primary transition-colors">auto_awesome</span><span class="font-body-md">AI Insights</span></a><a class="group flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high/40 hover:text-on-surface transition-all duration-300" data-path="profile" href="#"><span class="material-symbols-outlined mr-md text-[20px] group-hover:text-primary transition-colors">account_circle</span><span class="font-body-md">Profile</span></a></nav><div class="mt-auto p-md"><div class="bg-surface-container/30 rounded-xl p-md border border-outline-variant/10 flex items-center gap-md"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[20px]">person</span></div><div class="overflow-hidden"><p class="text-body-sm font-semibold text-on-surface truncate">Marcus Sterling</p><span class="px-sm py-[2px] bg-primary-container/20 text-primary text-[10px] font-label-caps rounded uppercase">Pro Member</span></div></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-20 bg-background/40 backdrop-blur-xl z-40 flex items-center justify-between px-margin border-b border-outline-variant/5"><div class="flex flex-col"><span class="text-headline-md font-headline-md text-on-surface">Page Context</span></div><div class="flex items-center gap-lg"><div class="flex items-center gap-sm bg-surface-container-high/40 px-md py-xs rounded-full border border-outline-variant/10 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">search</span><span class="text-body-sm font-label-caps">Search...</span><span class="ml-xl text-[10px] bg-surface-container-highest px-sm py-[1px] rounded">⌘K</span></div><div class="flex items-center gap-md"><button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">notifications</span></button><button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">settings</span></button></div></div></header><main class="relative pt-20 px-margin bg-transparent min-h-screen"><div class="flex flex-col w-full gap-xxl pb-xxl">
+<!-- Top Level Stats Bar - Asymmetric Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-8 flex flex-col gap-md">
+<div class="flex items-baseline gap-md">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Performance Metric</span>
+<div class="h-[1px] flex-1 bg-outline-variant/20"></div>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface max-w-2xl leading-tight">
+        A symphony of data points, refined for the <span class="text-primary italic">modern curator.</span>
+</h2>
+</div>
+<div class="md:col-span-4 bg-surface-container-high/40 backdrop-blur-xl p-xl rounded-xl border-t border-white/10 shadow-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">COLLECTION HEALTH</p>
+<p class="font-data-lg text-data-lg text-primary">98.4% Optimized</p>
+<div class="w-full bg-surface-container-highest h-1 mt-md rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98.4%] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">analytics</span>
+</div>
+</div>
+</section>
+<!-- KPI Grid: Glassmorphism emphasis -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl">library_music</span>
+<span class="font-data-md text-data-md text-on-surface-variant">+12%</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Total Songs</h4>
+<p class="font-display-lg text-display-lg text-on-surface mt-xs">12,842</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl">star_half</span>
+<span class="font-data-md text-data-md text-on-surface-variant">High</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Average Rating</h4>
+<p class="font-display-lg text-display-lg text-on-surface mt-xs">4.82</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl">category</span>
+<span class="font-data-md text-data-md text-on-surface-variant">Top Tier</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Favorite Genre</h4>
+<p class="font-headline-lg text-headline-lg text-on-surface mt-xs">Cinematic Jazz</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low/40 backdrop-blur-md p-xl border-t border-white/10 flex flex-col gap-md hover:bg-surface-container-high/60 transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl">task_alt</span>
+<span class="font-data-md text-data-md text-on-surface-variant">88% Completion</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Completed Songs</h4>
+<p class="font-display-lg text-display-lg text-on-surface mt-xs">11,201</p>
+</div>
+</div>
+</section>
+<!-- Distribution Analysis: Bento Grid style -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Genre Distribution (Large horizontal bars) -->
+<div class="lg:col-span-7 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm">
+<div class="flex justify-between items-end mb-xl">
+<h3 class="font-headline-md text-headline-md text-on-surface">Genre Distribution</h3>
+<span class="font-data-md text-data-md text-primary">Top 5 Segments</span>
+</div>
+<div class="flex flex-col gap-lg"><div class="space-y-sm"><div class="flex justify-between font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest"><span class="">Ambient / Neoclassical</span><span class="">42%</span></div><div class="w-full h-2 bg-surface-container-highest"><div class="h-full bg-primary w-[42%]"></div></div></div><div class="space-y-sm"><div class="flex justify-between font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest"><span class="">Electronic / Minimal</span><span class="">28%</span></div><div class="w-full h-2 bg-surface-container-highest"><div class="h-full bg-primary/70 w-[28%]"></div></div></div><div class="space-y-sm"><div class="flex justify-between font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest"><span class="">Orchestral / Score</span><span class="">15%</span></div><div class="w-full h-2 bg-surface-container-highest"><div class="h-full bg-primary/50 w-[15%]"></div></div></div><div class="space-y-sm"><div class="flex justify-between font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest"><span class="">Experimental Jazz</span><span class="">10%</span></div><div class="w-full h-2 bg-surface-container-highest"><div class="h-full bg-primary/30 w-[10%]"></div></div></div></div>
+</div>
+<!-- Rating Distribution (Vertical bars) -->
+<div class="lg:col-span-5 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xl">Rating Density</h3>
+<div class="flex-1 flex items-baseline justify-between gap-md pt-xl"><div class="flex-1 bg-primary/20 h-[10%] rounded-t-sm relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 font-data-md text-[10px] transition-opacity">★1</div></div><div class="flex-1 bg-primary/40 h-[25%] rounded-t-sm relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 font-data-md text-[10px] transition-opacity">★2</div></div><div class="flex-1 bg-primary/60 h-[45%] rounded-t-sm relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 font-data-md text-[10px] transition-opacity">★3</div></div><div class="flex-1 bg-primary/80 h-[85%] rounded-t-sm relative group border-t border-primary"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-100 font-data-md text-[10px]">★4</div></div><div class="flex-1 bg-primary h-[65%] rounded-t-sm relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 font-data-md text-[10px] transition-opacity">★5</div></div></div>
+<div class="flex justify-between mt-md px-xs">
+<span class="font-label-caps text-[10px] text-on-surface-variant tracking-tighter">LOW</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant tracking-tighter">PREMIUM</span>
+</div>
+</div>
+</section>
+<!-- Collection Growth & Release Year (Mid Section) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-8 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm overflow-hidden relative h-[400px]">
+<div class="flex justify-between items-start mb-xxl relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Collection Growth</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Asset accumulation over last 24 months</p>
+</div>
+<div class="flex gap-lg">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-caps text-[10px] text-on-surface uppercase">Mastered</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Demos</span>
+</div>
+</div>
+</div>
+<!-- Growth Visualization (SVG Line Chart) -->
+<div class="absolute bottom-0 left-0 w-full h-[250px] px-xl">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1000 200">
+<!-- Grid Lines -->
+<line class="text-white/10" stroke="currentColor" stroke-width="1" x1="0" x2="1000" y1="0" y2="0"></line>
+<line class="text-white/10" stroke="currentColor" stroke-width="1" x1="0" x2="1000" y1="0" y2="0"></line>
+<line class="text-white/10" stroke="currentColor" stroke-width="1" x1="0" x2="1000" y1="0" y2="0"></line>
+<!-- Shadow Path -->
+<path d="M0,200 L0,180 C100,170 200,190 300,160 C400,130 500,140 600,110 C700,80 800,100 900,40 L1000,20 L1000,200 Z" fill="url(#brassGradient)" opacity="0.1"></path>
+<!-- Main Line -->
+<path class="text-primary" d="M0,180 C100,170 200,190 300,160 C400,130 500,140 600,110 C700,80 800,100 900,40 L1000,20" fill="none" stroke="currentColor" stroke-width="3"></path>
+<defs>
+<linearGradient id="brassGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#e8c086"></stop>
+<stop offset="100%" stop-color="transparent"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container/30 p-xl border-t border-white/5 rounded-sm flex-1">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-xl tracking-widest">Era Distribution</h4>
+<div class="flex items-end gap-2 h-40">
+<div class="flex-1 bg-outline-variant/30 h-1/4 rounded-sm" title="Before 2000"></div>
+<div class="flex-1 bg-outline-variant/50 h-1/2 rounded-sm" title="2000-2010"></div>
+<div class="flex-1 bg-primary h-full rounded-sm" title="2010-2020"></div>
+<div class="flex-1 bg-primary/70 h-3/4 rounded-sm" title="2020+"></div>
+</div>
+<div class="flex justify-between mt-md font-data-md text-[10px] text-on-surface-variant">
+<span class="">&lt;2000</span>
+<span class="">&gt;2020</span>
+</div>
+</div>
+<div class="bg-primary p-xl border-t border-white/20 rounded-sm flex flex-col justify-between group cursor-pointer overflow-hidden relative border-2 border-primary">
+<div class="relative z-10">
+<h4 class="font-label-caps text-label-caps text-on-primary uppercase tracking-widest mb-sm opacity-80">Export Report</h4>
+<p class="font-headline-md text-headline-md text-on-primary">Full Catalog Audit</p>
+</div>
+<span class="material-symbols-outlined text-on-primary text-4xl self-end group-hover:translate-x-2 transition-transform duration-300 relative z-10">arrow_forward</span>
+<!-- Aesthetic background detail -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+</div>
+</div>
+</section>
+<!-- Collection Statistics Table -->
+<section class="bg-surface-container-low/20 backdrop-blur-sm p-xl rounded-sm">
+<div class="flex justify-between items-center mb-xxl">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">Collection Statistics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Granular analysis by audio tiering</p>
+</div>
+<button class="bg-surface-container-highest px-lg py-sm font-label-caps text-label-caps text-on-surface hover:bg-primary hover:text-on-primary transition-colors duration-300">
+            ADVANCED FILTER
+        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="border-b border-outline-variant/10">
+<tr>
+<th class="py-md font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Asset Name</th>
+<th class="py-md font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Bitrate</th>
+<th class="py-md font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Runtime</th>
+<th class="py-md font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Fidelity</th>
+<th class="py-md font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="group hover:bg-white/5 transition-colors cursor-default">
+<td class="py-lg h-[56px] py-0">
+<div class="flex flex-col">
+<span class="font-body-md text-on-surface">Nocturnal Wanderer</span>
+<span class="font-data-md text-[12px] text-on-surface-variant">Ethereal Records</span>
+</div>
+</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">320 kbps</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">04:12</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="font-label-caps text-[10px] px-sm py-[2px] bg-primary/10 text-primary border border-primary/20">MASTERED</span>
+</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+</td>
+</tr>
+<tr class="group hover:bg-white/5 transition-colors cursor-default">
+<td class="py-lg h-[56px] py-0">
+<div class="flex flex-col">
+<span class="font-body-md text-on-surface">The Alchemist Suite</span>
+<span class="font-data-md text-[12px] text-on-surface-variant">Modular Collective</span>
+</div>
+</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">2,304 kbps</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">12:54</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="font-label-caps text-[10px] px-sm py-[2px] bg-outline-variant/10 text-on-surface-variant border border-outline-variant/20">LOSSLESS</span>
+</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+</td>
+</tr>
+<tr class="group hover:bg-white/5 transition-colors cursor-default">
+<td class="py-lg h-[56px] py-0">
+<div class="flex flex-col">
+<span class="font-body-md text-on-surface">Signal to Noise</span>
+<span class="font-data-md text-[12px] text-on-surface-variant">Distorted Realism</span>
+</div>
+</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">256 kbps</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">03:45</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="font-label-caps text-[10px] px-sm py-[2px] bg-outline-variant/10 text-on-surface-variant border border-outline-variant/20">STANDARD</span>
+</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="w-2 h-2 rounded-full bg-outline-variant/40 inline-block"></span>
+</td>
+</tr>
+<tr class="group hover:bg-white/5 transition-colors cursor-default">
+<td class="py-lg h-[56px] py-0">
+<div class="flex flex-col">
+<span class="font-body-md text-on-surface">Obsidian Flow</span>
+<span class="font-data-md text-[12px] text-on-surface-variant">Deep End Audio</span>
+</div>
+</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">1,411 kbps</td>
+<td class="py-lg text-right font-data-md text-on-surface-variant h-[56px] py-0">06:22</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="font-label-caps text-[10px] px-sm py-[2px] bg-primary/10 text-primary border border-primary/20">HI-RES</span>
+</td>
+<td class="py-lg text-right h-[56px] py-0">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Decorative Spacer/Divider -->
+<div class="flex justify-center items-center gap-xl py-xl opacity-20">
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<img alt="Logo Icon" class="h-4 w-auto grayscale contrast-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiSiW1AIKVorii8BTmbd4GMOfSk1wv2_OiT23OOBY4RS99XjUxQlbw_ajg62nhvlrTEXtc3ATi50pRTjrSiUBwfOIFHm_r7mRhzGV4_0xoBT79jMnds1cbtXj841oZrTR9BBDRtIg-T7ZOZn6bqYaf73mgmRItGJULTNepiVczYIuP0bxnD4AVPaxQIPS0kKeizZNiJCUY70D3w_8UZWCCzXO0T6BUGb9hPleZv2uzySyhCYRik88">
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for KPI cards on hover
+  document.querySelectorAll('section > div').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      // Logic for any specific JS animations can go here
+    });
+  });
+</script>
+<style>
+  /* Custom scrollbar for table container if needed */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 2px;
+    display: block;
+  }
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(176, 141, 87, 0.3);
+  }
+</style></main></div>
+
+</body></html>

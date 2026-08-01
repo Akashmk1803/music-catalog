@@ -1,0 +1,6 @@
+/* Add custom animations and keyframes here */
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/40 backdrop-blur-xl border-t border-t-white/15 shadow-[0_20px_40px_rgba(0,0,0,0.4)];
+  }
+}

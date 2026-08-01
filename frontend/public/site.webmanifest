@@ -1,0 +1,14 @@
+{
+  "name": "Catalog Insights",
+  "short_name": "Catalog",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#101412",
+  "background_color": "#101412",
+  "display": "standalone"
+}
