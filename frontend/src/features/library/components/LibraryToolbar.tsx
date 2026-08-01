@@ -29,23 +29,23 @@ export function LibraryToolbar({
   onSortChange,
 }: LibraryToolbarProps) {
   return (
-    <div className="sticky top-20 z-30 -mx-margin px-margin py-lg bg-background/60 backdrop-blur-xl border-b border-outline-variant/10">
-      <div className="flex flex-wrap items-center justify-between gap-lg">
+    <div className="sticky top-20 z-30 -mx-margin px-margin py-4 sm:py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         {/* Search and Filters Group */}
-        <div className="flex flex-1 items-center gap-md min-w-[300px]">
+        <div className="flex flex-1 w-full md:w-auto items-center gap-2 sm:gap-4">
           <div className="relative flex-1 group">
-            <Search className="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" size={20} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50 group-focus-within:text-primary transition-colors" size={18} />
             <input 
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder="Search your library..." 
-              className="w-full h-12 pl-xl pr-md bg-surface-container-low/45 backdrop-blur-xl border-b border-outline-variant/20 focus:border-primary focus:outline-none font-body-md text-on-surface transition-all placeholder:text-on-surface-variant/40" 
+              placeholder="Search library..." 
+              className="w-full h-10 pl-10 pr-4 bg-surface-container-low/40 backdrop-blur-md rounded-lg border border-white/5 focus:border-primary/50 focus:bg-surface-container-high/40 focus:outline-none font-body-sm text-on-surface transition-all placeholder:text-on-surface-variant/40 shadow-sm" 
             />
           </div>
-          <div className="flex items-center gap-xs">
-            <div className="h-12 flex items-center gap-sm bg-surface-container-high/20 px-sm border-b border-transparent">
-              <Filter className="text-on-surface-variant ml-sm" size={20} />
+          <div className="flex items-center shrink-0">
+            <div className="h-10 flex items-center gap-2 bg-surface-container-low/40 rounded-lg px-3 border border-white/5 shadow-sm">
+              <Filter className="text-on-surface-variant/50" size={16} />
               <select
                 value={statusFilter}
                 onChange={(e) => onStatusChange(e.target.value as LibraryStatus | 'All')}
@@ -61,15 +61,15 @@ export function LibraryToolbar({
         </div>
         
         {/* Sorting Group */}
-        <div className="flex items-center gap-lg">
-          <div className="flex flex-col items-end">
-            <span className="text-[10px] font-label-caps text-primary/60 uppercase tracking-[0.2em] mb-xs">
+        <div className="flex w-full md:w-auto items-center justify-between md:justify-end gap-6">
+          <div className="flex flex-col items-start md:items-end">
+            <span className="text-[9px] font-label-caps text-on-surface-variant/50 uppercase tracking-[0.2em] mb-1">
               Sort Archives By
             </span>
             <select 
               value={sortOption}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
-              className="bg-transparent font-headline-md text-[20px] text-on-surface border-none focus:ring-0 cursor-pointer appearance-none text-right pr-6"
+              className="bg-transparent font-headline-md text-[16px] text-on-surface border-none focus:ring-0 cursor-pointer appearance-none text-left md:text-right pr-4 hover:text-primary transition-colors"
             >
               <option value="Newest Added">Newest Added</option>
               <option value="Highest Rated">Highest Rated</option>
@@ -79,12 +79,12 @@ export function LibraryToolbar({
               <option value="Artist A-Z">Artist A-Z</option>
             </select>
           </div>
-          <div className="flex gap-1">
-            <button className="w-10 h-10 flex items-center justify-center bg-primary text-on-primary">
-              <Grid size={20} />
+          <div className="flex gap-1 bg-surface-container-low/40 p-1 rounded-lg border border-white/5 shadow-sm">
+            <button className="w-8 h-8 rounded flex items-center justify-center bg-primary/20 text-primary transition-colors">
+              <Grid size={16} />
             </button>
-            <button className="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high/40 transition-colors">
-              <List size={20} />
+            <button className="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant/60 hover:text-on-surface hover:bg-surface-container-high/40 transition-colors">
+              <List size={16} />
             </button>
           </div>
         </div>

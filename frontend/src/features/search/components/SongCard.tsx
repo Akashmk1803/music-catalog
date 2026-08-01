@@ -50,54 +50,54 @@ export function SongCard({ song }: SongCardProps) {
           </div>
         )}
         
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-lg">
-          <span className="text-label-caps text-primary tracking-widest uppercase">Premium Catalog Artifact</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300 flex items-end p-6">
+          <span className="text-[10px] font-label-caps text-primary tracking-widest uppercase">Premium Catalog Artifact</span>
         </div>
       </div>
       
       <div className="p-6 sm:p-8 flex flex-col flex-1">
-        <div className="flex justify-between items-start mb-4 gap-4">
+        <div className="flex justify-between items-start gap-4 mb-2">
           <div className="overflow-hidden">
-            <h3 className="font-headline-md text-[20px] text-on-surface mb-xs group-hover:text-primary transition-colors truncate">
+            <h3 className="font-headline-md text-[18px] leading-tight text-on-surface group-hover:text-primary transition-colors truncate">
               {song.title}
             </h3>
-            <p className="text-body-md text-on-surface-variant truncate">{song.artistName}</p>
+            <p className="text-body-sm text-on-surface-variant/80 italic truncate mt-0.5">{song.artistName}</p>
           </div>
           {releaseYear && (
-            <span className="font-data-md text-data-md text-primary/60 shrink-0">{releaseYear}</span>
+            <span className="text-[10px] font-data-md text-primary/60 shrink-0 uppercase tracking-widest">{releaseYear}</span>
           )}
         </div>
         
-        <div className="flex items-center gap-2 mb-6 mt-auto">
-          <span className="text-label-caps text-on-surface-variant/60 uppercase tracking-tighter">Genre:</span>
-          <span className="text-body-sm text-on-surface-variant italic truncate">{song.genre || 'Unknown'}</span>
+        <div className="flex items-center gap-2 mb-8 mt-auto">
+          <span className="text-[9px] font-label-caps text-on-surface-variant/50 uppercase tracking-[0.2em]">Genre:</span>
+          <span className="text-body-sm text-on-surface-variant/90 truncate">{song.genre || 'Unknown'}</span>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 mt-auto">
           <a 
             href={song.previewUrl || '#'} 
             target="_blank" 
             rel="noopener noreferrer"
-            className={`flex items-center justify-center gap-sm bg-primary text-on-primary font-label-caps py-md rounded-lg hover:brightness-110 transition-all active:scale-95 ${!song.previewUrl && 'opacity-50 pointer-events-none'}`}
+            className={`flex items-center justify-center gap-2 bg-primary/10 text-primary font-label-caps py-2.5 rounded-lg hover:bg-primary/20 transition-all active:scale-95 text-xs tracking-widest uppercase ${!song.previewUrl && 'opacity-50 pointer-events-none'}`}
           >
-            <Play size={18} fill="currentColor" /> Preview
+            <Play size={16} fill="currentColor" /> Preview
           </a>
           <button 
             onClick={handleAdd}
             disabled={isAdded || isPending}
-            className={`flex items-center justify-center gap-sm border-t border-white/10 font-label-caps py-md rounded-lg transition-all active:scale-95 ${
+            className={`flex items-center justify-center gap-2 border border-white/5 font-label-caps py-2.5 rounded-lg transition-all active:scale-95 text-xs tracking-widest uppercase ${
               isAdded 
-                ? 'bg-primary/20 text-primary border-primary/20' 
-                : 'bg-surface-container-highest/40 text-on-surface hover:bg-surface-container-highest'
+                ? 'bg-primary/5 text-primary border-primary/20' 
+                : 'bg-surface-container-highest/30 text-on-surface hover:bg-surface-container-highest/60 hover:border-white/10'
             }`}
           >
             {isPending ? (
-              <Loader2 size={18} className="animate-spin" />
+              <Loader2 size={16} className="animate-spin" />
             ) : isAdded ? (
               'Added'
             ) : (
               <>
-                <Plus size={18} /> Library
+                <Plus size={16} /> Library
               </>
             )}
           </button>

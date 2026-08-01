@@ -29,24 +29,26 @@ export function DeleteConfirmModal({ isOpen, onClose, songId, songTitle }: Delet
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="bg-surface border border-outline-variant/20 text-on-surface w-full max-w-sm gap-0 p-0 overflow-hidden">
-        <DialogHeader className="p-xl pb-md border-b border-outline-variant/10 bg-error/10">
-          <DialogTitle className="font-headline-md text-headline-md text-error">Delete Song</DialogTitle>
+        <DialogHeader className="p-8 pb-6 border-b border-error/10 bg-error/5">
+          <DialogTitle className="font-headline-md text-[22px] text-error">Delete Song</DialogTitle>
         </DialogHeader>
 
-        <div className="p-xl flex flex-col gap-md">
-          <p className="text-body-md text-on-surface">
-            Are you sure you want to delete &quot;{songTitle}&quot;?
-          </p>
-          <p className="text-body-sm text-on-surface-variant">
-            This action cannot be undone.
-          </p>
+        <div className="p-8 flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <p className="text-body-lg text-on-surface">
+              Are you sure you want to delete &quot;{songTitle}&quot;?
+            </p>
+            <p className="text-body-md text-on-surface-variant/80">
+              This action cannot be undone.
+            </p>
+          </div>
 
-          <div className="mt-xl flex justify-end gap-md">
+          <div className="mt-4 flex justify-end gap-4">
             <button
               type="button"
               onClick={onClose}
               disabled={isPending}
-              className="px-lg py-sm text-on-surface-variant hover:text-on-surface font-label-caps uppercase tracking-widest transition-colors"
+              className="px-6 py-2.5 text-on-surface-variant/80 hover:text-on-surface font-label-caps text-xs uppercase tracking-[0.2em] transition-colors"
             >
               Cancel
             </button>
@@ -54,7 +56,7 @@ export function DeleteConfirmModal({ isOpen, onClose, songId, songTitle }: Delet
               type="button"
               onClick={handleDelete}
               disabled={isPending}
-              className="px-lg py-sm bg-error text-on-error font-label-caps rounded-lg hover:brightness-110 transition-all uppercase tracking-widest disabled:opacity-50"
+              className="px-6 py-2.5 bg-error/10 text-error border border-error/20 font-label-caps text-xs rounded-lg hover:bg-error hover:text-on-error transition-all uppercase tracking-[0.2em] disabled:opacity-50"
             >
               {isPending ? 'Deleting...' : 'Delete'}
             </button>

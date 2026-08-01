@@ -45,7 +45,7 @@ export function SearchInput({ onSearchChange }: SearchInputProps) {
 
       {/* Centered Large Glass Search Bar */}
       <div className="relative w-full max-w-4xl z-10 px-margin">
-        <div className="group relative flex items-center bg-surface-container-low/40 backdrop-blur-xxl border-t border-white/10 rounded-xl transition-all duration-500 hover:bg-surface-container-high/60 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4 focus-within:ring-offset-background shadow-2xl">
+        <div className="group relative flex items-center bg-surface-container-low/40 backdrop-blur-md border border-white/5 rounded-xl transition-all duration-300 hover:bg-surface-container-high/40 focus-within:bg-surface-container-high/60 focus-within:border-primary/50 shadow-lg">
           <Search className="ml-lg text-primary" size={32} />
           <input
             id="mainSearchInput"
@@ -61,18 +61,19 @@ export function SearchInput({ onSearchChange }: SearchInputProps) {
           </div>
         </div>
 
-        {/* Quick Actions / Trending */}
-        <div className="mt-xl flex flex-wrap justify-center gap-md">
-          <span className="text-label-caps text-on-surface-variant self-center mr-sm">Trending Searches:</span>
-          {TRENDING_SEARCHES.map((term) => (
-            <button
-              key={term}
-              onClick={() => handleTrendingClick(term)}
-              className="px-md py-xs bg-surface-container/40 backdrop-blur-md border-t border-white/5 rounded-full text-body-sm text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all"
-            >
-              {term}
-            </button>
-          ))}
+        <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
+          <span className="text-[10px] font-label-caps uppercase tracking-[0.2em] text-on-surface-variant/60">Trending Searches:</span>
+          <div className="flex flex-wrap gap-2">
+            {TRENDING_SEARCHES.map((term) => (
+              <button
+                key={term}
+                onClick={() => handleTrendingClick(term)}
+                className="px-4 py-1.5 bg-surface-container-lowest/50 backdrop-blur-md border border-white/5 rounded-full text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/40 hover:border-white/10 transition-all duration-300"
+              >
+                {term}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>

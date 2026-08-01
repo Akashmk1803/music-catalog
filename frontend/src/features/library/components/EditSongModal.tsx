@@ -86,8 +86,8 @@ export function EditSongModal({ song, isOpen, onClose }: EditSongModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="bg-surface border border-outline-variant/20 text-on-surface w-full max-w-md gap-0 p-0 overflow-hidden">
-        <DialogHeader className="p-xl pb-md border-b border-outline-variant/10 bg-surface-container-low/50">
-          <DialogTitle className="font-headline-md text-headline-md text-on-surface">
+        <DialogHeader className="p-8 pb-6 border-b border-white/5 bg-surface-container-low/40">
+          <DialogTitle className="font-headline-md text-[22px] text-on-surface">
             Edit &quot;{song?.title}&quot;
           </DialogTitle>
           <DialogDescription className="text-body-md text-on-surface-variant">
@@ -95,58 +95,58 @@ export function EditSongModal({ song, isOpen, onClose }: EditSongModalProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="p-xl flex flex-col gap-md max-h-[70vh] overflow-y-auto">
-          <div className="space-y-xs">
-            <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Title</label>
+        <form onSubmit={handleSubmit(onSubmit)} className="p-8 flex flex-col gap-6 max-h-[70vh] overflow-y-auto">
+          <div className="space-y-2">
+            <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Title</label>
             <input
               {...register('title')}
-              className="w-full bg-surface-container/50 border border-outline-variant/20 rounded-lg p-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
             />
             {errors.title && <p className="text-error text-body-sm">{errors.title.message}</p>}
           </div>
 
-          <div className="space-y-xs">
-            <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Artist</label>
+          <div className="space-y-2">
+            <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Artist</label>
             <input
               {...register('artist')}
-              className="w-full bg-surface-container/50 border border-outline-variant/20 rounded-lg p-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
             />
             {errors.artist && <p className="text-error text-body-sm">{errors.artist.message}</p>}
           </div>
 
-          <div className="grid grid-cols-2 gap-md">
-            <div className="space-y-xs">
-              <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Genre</label>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Genre</label>
               <input
                 {...register('genre')}
-                className="w-full bg-surface-container/50 border border-outline-variant/20 rounded-lg p-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
               />
             </div>
-            <div className="space-y-xs">
-              <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Year</label>
+            <div className="space-y-2">
+              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Year</label>
               <input
                 type="number"
                 {...register('releaseYear')}
-                className="w-full bg-surface-container/50 border border-outline-variant/20 rounded-lg p-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-md">
-            <div className="space-y-xs">
-              <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Status</label>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Status</label>
               <select
                 {...register('status')}
-                className="w-full bg-surface-container/50 border border-outline-variant/20 rounded-lg p-md text-on-surface focus:outline-none focus:border-primary transition-colors appearance-none"
+                className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm appearance-none"
               >
                 <option value="Completed">Completed</option>
                 <option value="Listening">Listening</option>
                 <option value="Planned">Planned</option>
               </select>
             </div>
-            <div className="space-y-xs">
-              <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Rating</label>
-              <div className="h-[54px] flex items-center bg-surface-container/50 border border-outline-variant/20 rounded-lg px-md">
+            <div className="space-y-2">
+              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Rating</label>
+              <div className="h-[46px] flex items-center bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg px-4 shadow-sm">
                 <RatingStars
                   rating={ratingValue}
                   interactive={true}
@@ -157,27 +157,27 @@ export function EditSongModal({ song, isOpen, onClose }: EditSongModalProps) {
             </div>
           </div>
 
-          <div className="space-y-xs">
-            <label className="text-label-caps text-on-surface-variant uppercase tracking-widest">Notes</label>
+          <div className="space-y-2">
+            <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Notes</label>
             <textarea
               {...register('notes')}
               rows={3}
-              className="w-full bg-surface-container/50 border border-outline-variant/20 rounded-lg p-md text-on-surface focus:outline-none focus:border-primary transition-colors resize-none"
+              className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm resize-none"
             />
           </div>
 
-          <div className="mt-md flex justify-end gap-md">
+          <div className="mt-4 pt-6 border-t border-white/5 flex justify-end gap-4">
             <button
               type="button"
               onClick={onClose}
-              className="px-xl py-md text-on-surface-variant hover:text-on-surface font-label-caps uppercase tracking-widest transition-colors"
+              className="px-6 py-2.5 text-on-surface-variant/80 hover:text-on-surface font-label-caps text-xs uppercase tracking-[0.2em] transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isPending}
-              className="px-xl py-md bg-primary text-on-primary font-label-caps rounded-lg hover:brightness-110 transition-all uppercase tracking-widest disabled:opacity-50"
+              className="px-6 py-2.5 bg-primary/10 text-primary border border-primary/20 font-label-caps text-xs rounded-lg hover:bg-primary hover:text-on-primary transition-all uppercase tracking-[0.2em] disabled:opacity-50"
             >
               {isPending ? 'Saving...' : 'Save Changes'}
             </button>
