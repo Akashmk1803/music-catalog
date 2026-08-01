@@ -60,63 +60,55 @@ export function LoginForm() {
 
   return (
     <div className="flex flex-col w-full relative">
-      {/* Ambient Background Blooms */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] mix-blend-screen opacity-50"></div>
-        <div className="absolute top-[40%] -right-[15%] w-[500px] h-[500px] bg-tertiary-container/10 rounded-full blur-[100px] mix-blend-screen opacity-30"></div>
-      </div>
       
       {/* Main Login Card */}
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Branding Accent */}
-        <div className="mb-12 flex flex-col items-center gap-4">
+        <div className="mb-10 flex flex-col items-center gap-4 lg:hidden">
           <div className="w-12 h-[1px] bg-primary/40"></div>
           <span className="font-label-caps text-[12px] leading-none text-primary tracking-[0.3em] uppercase font-semibold">Executive Access</span>
         </div>
         
-        {/* The Smoked Glass Panel */}
-        <div className="w-full glass-panel bg-surface-container-low/45 rounded-xxl p-8 sm:p-12 border-t border-[#EDE8DD]/15 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)]">
-          <header className="mb-12 text-center">
-            <h1 className="font-display-lg text-[48px] leading-[1.1] text-on-surface mb-xs italic font-light tracking-[-0.02em]">Welcome Back</h1>
-            <p className="font-body-sm text-[14px] leading-[1.5] text-on-surface-variant/60 tracking-tight">Enter your credentials to access the Catalog.</p>
+        {/* The Form Panel */}
+        <div className="w-full">
+          <header className="mb-10">
+            <h2 className="font-headline-md text-3xl text-on-surface mb-2 tracking-tight">Welcome Back</h2>
+            <p className="font-body-md text-on-surface-variant/70">Enter your credentials to access the Catalog.</p>
           </header>
           
-          <form className="flex flex-col gap-8" onSubmit={handleSubmit(onSubmit)}>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
             {/* Email Input */}
             <div className="group relative">
-              <label className="font-label-caps font-semibold text-[10px] text-on-surface-variant/50 uppercase mb-xs block ml-unit" htmlFor="email">
+              <label className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest mb-2 block" htmlFor="email">
                 Email Address
               </label>
               <input
                 {...register('email')}
-                className={`w-full bg-surface-container-lowest/30 border-b ${errors.email ? 'border-destructive' : 'border-outline-variant/30'} px-md py-lg font-body-md text-on-surface placeholder:text-on-surface-variant/20 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container-lowest/50`}
+                className={`w-full bg-surface-container/30 border ${errors.email ? 'border-error' : 'border-outline-variant/20'} rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/30 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container/50 focus:shadow-[0_0_15px_rgba(232,192,134,0.15)]`}
                 id="email"
                 placeholder="name@studio.com"
                 type="email"
                 disabled={isPending}
               />
-              {!errors.email && (
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-focus-within:w-full shadow-[0_0_15px_rgba(176,141,87,0.4)]"></div>
-              )}
               {errors.email && (
-                <p className="text-destructive text-[11px] mt-xs ml-unit font-body-sm">{errors.email.message}</p>
+                <p className="text-error text-xs mt-2">{errors.email.message}</p>
               )}
             </div>
 
             {/* Password Input */}
             <div className="group relative">
-              <div className="flex justify-between items-center mb-xs ml-unit">
-                <label className="font-label-caps font-semibold text-[10px] text-on-surface-variant/50 uppercase block" htmlFor="password">
+              <div className="flex justify-between items-center mb-2">
+                <label className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest block" htmlFor="password">
                   Security Key
                 </label>
-                <Link className="font-label-caps font-semibold text-[10px] text-primary/70 hover:text-primary transition-colors duration-200 uppercase tracking-widest" href="#">
+                <Link className="font-label-caps text-[10px] text-primary/80 hover:text-primary transition-colors duration-200 uppercase tracking-widest" href="#">
                   Reset
                 </Link>
               </div>
               <div className="relative">
                 <input
                   {...register('password')}
-                  className={`w-full bg-surface-container-lowest/30 border-b ${errors.password ? 'border-destructive' : 'border-outline-variant/30'} px-md py-lg font-body-md text-on-surface placeholder:text-on-surface-variant/20 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container-lowest/50 pr-12`}
+                  className={`w-full bg-surface-container/30 border ${errors.password ? 'border-error' : 'border-outline-variant/20'} rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/30 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container/50 focus:shadow-[0_0_15px_rgba(232,192,134,0.15)] pr-12`}
                   id="password"
                   placeholder="••••••••"
                   type={showPassword ? 'text' : 'password'}
@@ -131,20 +123,18 @@ export function LoginForm() {
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              {!errors.password && (
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-focus-within:w-full shadow-[0_0_15px_rgba(176,141,87,0.4)]"></div>
-              )}
+
               {errors.password && (
-                <p className="text-destructive text-[11px] mt-xs ml-unit font-body-sm">{errors.password.message}</p>
+                <p className="text-error text-xs mt-2">{errors.password.message}</p>
               )}
             </div>
 
             {/* Login Button */}
             <button
               disabled={isPending}
-              className="mt-6 w-full bg-primary py-lg flex items-center justify-center gap-md group overflow-hidden relative active:scale-[0.98] transition-transform duration-100 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-6 w-full bg-primary hover:bg-primary/90 text-on-primary rounded-lg py-3.5 flex items-center justify-center gap-3 group overflow-hidden relative active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(232,192,134,0.2)] hover:shadow-[0_0_30px_rgba(232,192,134,0.4)]"
             >
-              <span className="relative z-10 font-label-caps font-semibold text-[12px] text-on-primary tracking-widest uppercase">
+              <span className="relative z-10 font-label-caps text-[12px] tracking-[0.2em] uppercase">
                 {isPending ? 'Authenticating...' : 'Establish Connection'}
               </span>
               {isPending ? (
@@ -153,16 +143,16 @@ export function LoginForm() {
                 <ArrowRight className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 text-on-primary" size={18} />
               )}
               {!isPending && (
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
               )}
             </button>
           </form>
           
           {/* Footer Actions */}
-          <footer className="mt-12 pt-8 border-t border-outline-variant/10 flex flex-col items-center gap-md">
-            <p className="font-body-sm text-[14px] text-on-surface-variant/40">
+          <footer className="mt-8 pt-8 flex flex-col items-start gap-4">
+            <p className="font-body-sm text-[14px] text-on-surface-variant/60">
               Don&apos;t have an invitation? 
-              <Link className="text-on-surface border-b border-on-surface/20 hover:border-primary hover:text-primary transition-all duration-300 ml-xs" href="/register">
+              <Link className="text-primary hover:text-primary/80 transition-colors duration-300 ml-2" href="/register">
                 Register Profile
               </Link>
             </p>
@@ -170,20 +160,6 @@ export function LoginForm() {
         </div>
         
         {/* Technical Metadata Decoration */}
-        <div className="mt-12 flex items-center gap-xl opacity-20">
-          <div className="flex items-center gap-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-[pulse-soft_3s_infinite]"></span>
-            <span className="font-data-md font-medium text-[10px] text-on-surface uppercase tracking-widest">Secure Server: Lon-01</span>
-          </div>
-          <div className="font-data-md font-medium text-[10px] text-on-surface uppercase tracking-widest">v4.2.0-STABLE</div>
-        </div>
-      </div>
-      
-      {/* Decorative Vertical Text */}
-      <div className="absolute -left-margin top-1/2 -translate-y-1/2 hidden xl:block">
-        <span className="[writing-mode:vertical-rl] font-label-caps font-semibold text-[10px] text-primary/20 tracking-[1em] uppercase select-none">
-          Proprietary Access Only • Catalog Music Insights
-        </span>
       </div>
     </div>
   );

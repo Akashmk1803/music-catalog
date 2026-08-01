@@ -99,68 +99,67 @@ export function RegisterForm() {
 
   return (
     <div className="flex flex-col w-full relative">
-      {/* Decorative Ambient Element */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] mix-blend-screen opacity-50 animate-[pulse_8s_ease-in-out_infinite]"></div>
-        <div className="absolute -bottom-[10%] -left-[5%] w-[400px] h-[400px] bg-tertiary-container/10 rounded-full blur-[100px] mix-blend-screen opacity-30 animate-[pulse_12s_ease-in-out_infinite]"></div>
-      </div>
       
-      <div className="relative z-10 flex flex-col gap-12 p-8 sm:p-12 glass-panel bg-surface-container-low/45 rounded-xxl border-t border-[#EDE8DD]/15 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)]">
+      <div className="w-full">
         {/* Header/Logo Area */}
-        <div className="flex flex-col items-center text-center gap-4">
+        <div className="flex flex-col items-center text-center gap-4 mb-10 lg:hidden">
           <div className="relative group">
-            <span className="font-display-lg text-[48px] leading-[1.1] font-light tracking-[-0.02em] text-primary uppercase tracking-widest">Catalog</span>
+            <span className="font-display-lg text-[42px] leading-[1.1] font-light tracking-tight text-primary uppercase tracking-widest">Catalog</span>
             <div className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
           </div>
-          <span className="font-label-caps font-semibold text-[12px] leading-[1.0] text-outline tracking-[0.3em] uppercase">Music Insights</span>
         </div>
         
+        <header className="mb-10 lg:block hidden">
+          <h2 className="font-headline-md text-3xl text-on-surface mb-2 tracking-tight">Create Profile</h2>
+          <p className="font-body-md text-on-surface-variant/70">Join the executive network.</p>
+        </header>
+        
         {/* Registration Form */}
-        <form className="flex flex-col gap-8" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
           {/* Name Field */}
-          <div className="flex flex-col gap-sm">
-            <label className="font-label-caps font-semibold text-[12px] text-on-surface-variant/70 uppercase tracking-widest" htmlFor="full-name">
+          <div className="flex flex-col">
+            <label className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest mb-2 block" htmlFor="full-name">
               Full Name
             </label>
             <div className="relative">
               <input
                 {...register('name')}
-                className={`w-full bg-surface-container-highest/30 border-b ${errors.name ? 'border-destructive' : 'border-outline-variant/30'} py-md px-xs font-data-md font-medium text-[14px] leading-[1.2] tracking-widest uppercase text-on-surface placeholder:text-on-surface-variant/20 focus:outline-none focus:border-primary transition-all duration-300`}
+                className={`w-full bg-surface-container/30 border ${errors.name ? 'border-error' : 'border-outline-variant/20'} rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/30 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container/50 focus:shadow-[0_0_15px_rgba(232,192,134,0.15)]`}
                 id="full-name"
-                placeholder="ALEXANDER VANE"
+                placeholder="Alexander Vane"
                 type="text"
                 disabled={isPending}
               />
               {errors.name && (
-                <p className="text-destructive text-[11px] mt-xs font-body-sm normal-case">{errors.name.message}</p>
+                <p className="text-error text-xs mt-2">{errors.name.message}</p>
               )}
             </div>
           </div>
 
           {/* Email Field */}
-          <div className="flex flex-col gap-sm">
-            <label className="font-label-caps font-semibold text-[12px] text-on-surface-variant/70 uppercase tracking-widest" htmlFor="email">
+          <div className="flex flex-col">
+            <label className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest mb-2 block" htmlFor="email">
               Email Address
             </label>
             <div className="relative">
               <input
                 {...register('email')}
-                className={`w-full bg-surface-container-highest/30 border-b ${errors.email ? 'border-destructive' : 'border-outline-variant/30'} py-md px-xs font-data-md font-medium text-[14px] leading-[1.2] tracking-widest uppercase text-on-surface placeholder:text-on-surface-variant/20 focus:outline-none focus:border-primary transition-all duration-300`}
+                className={`w-full bg-surface-container/30 border ${errors.email ? 'border-error' : 'border-outline-variant/20'} rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/30 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container/50 focus:shadow-[0_0_15px_rgba(232,192,134,0.15)]`}
                 id="email"
-                placeholder="ARCHIVE@CATALOG.IO"
+                placeholder="archive@catalog.io"
                 type="email"
                 disabled={isPending}
               />
               {errors.email && (
-                <p className="text-destructive text-[11px] mt-xs font-body-sm normal-case">{errors.email.message}</p>
+                <p className="text-error text-xs mt-2">{errors.email.message}</p>
               )}
             </div>
           </div>
 
           {/* Password Field & Strength */}
-          <div className="flex flex-col gap-sm">
-            <div className="flex justify-between items-end">
-              <label className="font-label-caps font-semibold text-[12px] text-on-surface-variant/70 uppercase tracking-widest" htmlFor="password">
+          <div className="flex flex-col">
+            <div className="flex justify-between items-end mb-2">
+              <label className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest block" htmlFor="password">
                 Security Key
               </label>
               <span className="font-data-md font-medium text-[10px] uppercase" style={{ color: strengthColor }}>
@@ -170,7 +169,7 @@ export function RegisterForm() {
             <div className="relative group">
               <input
                 {...register('password')}
-                className={`w-full bg-surface-container-highest/30 border-b ${errors.password ? 'border-destructive' : 'border-outline-variant/30'} py-md px-xs font-data-md font-medium text-[14px] leading-[1.2] tracking-[0.2em] text-on-surface placeholder:text-on-surface-variant/20 focus:outline-none focus:border-primary transition-all duration-300 pr-12`}
+                className={`w-full bg-surface-container/30 border ${errors.password ? 'border-error' : 'border-outline-variant/20'} rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/30 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container/50 focus:shadow-[0_0_15px_rgba(232,192,134,0.15)] pr-12`}
                 id="password"
                 placeholder="••••••••••••"
                 type={showPassword ? 'text' : 'password'}
@@ -179,14 +178,14 @@ export function RegisterForm() {
               <button
                 type="button"
                 tabIndex={-1}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant/50 hover:text-on-surface transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50 hover:text-on-surface transition-colors"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
               
               {/* Brass Progress Bar Container */}
-              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-surface-container-highest overflow-hidden">
+              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-surface-container-highest overflow-hidden rounded-full mt-2">
                 <div
                   className="h-full bg-primary transition-all duration-500 ease-out shadow-[0_0_8px_rgba(232,192,134,0.4)]"
                   style={{ width: strengthWidth }}
@@ -194,22 +193,22 @@ export function RegisterForm() {
               </div>
             </div>
             {errors.password && (
-              <p className="text-destructive text-[11px] font-body-sm normal-case">{errors.password.message}</p>
+              <p className="text-error text-xs mt-3">{errors.password.message}</p>
             )}
-            <p className="font-body-sm text-[11px] text-outline-variant italic leading-relaxed">
+            <p className="font-body-sm text-[11px] text-on-surface-variant/60 italic leading-relaxed mt-2">
               Ensure your key includes at least 8 characters with varied archetypes.
             </p>
           </div>
 
           {/* Confirm Password Field */}
-          <div className="flex flex-col gap-sm">
-            <label className="font-label-caps font-semibold text-[12px] text-on-surface-variant/70 uppercase tracking-widest" htmlFor="confirmPassword">
+          <div className="flex flex-col mt-2">
+            <label className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest mb-2 block" htmlFor="confirmPassword">
               Confirm Security Key
             </label>
             <div className="relative group">
               <input
                 {...register('confirmPassword')}
-                className={`w-full bg-surface-container-highest/30 border-b ${errors.confirmPassword ? 'border-destructive' : 'border-outline-variant/30'} py-md px-xs font-data-md font-medium text-[14px] leading-[1.2] tracking-[0.2em] text-on-surface placeholder:text-on-surface-variant/20 focus:outline-none focus:border-primary transition-all duration-300 pr-12`}
+                className={`w-full bg-surface-container/30 border ${errors.confirmPassword ? 'border-error' : 'border-outline-variant/20'} rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/30 transition-all duration-300 focus:outline-none focus:border-primary focus:bg-surface-container/50 focus:shadow-[0_0_15px_rgba(232,192,134,0.15)] pr-12`}
                 id="confirmPassword"
                 placeholder="••••••••••••"
                 type={showConfirmPassword ? 'text' : 'password'}
@@ -218,58 +217,44 @@ export function RegisterForm() {
               <button
                 type="button"
                 tabIndex={-1}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant/50 hover:text-on-surface transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50 hover:text-on-surface transition-colors"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
-                {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
-              
-              {!errors.confirmPassword && (
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-surface-container-highest overflow-hidden">
-                   <div className="h-full bg-primary w-0 transition-all duration-500 group-focus-within:w-full shadow-[0_0_8px_rgba(232,192,134,0.4)]"></div>
-                </div>
-              )}
             </div>
             {errors.confirmPassword && (
-              <p className="text-destructive text-[11px] font-body-sm normal-case">{errors.confirmPassword.message}</p>
+              <p className="text-error text-xs mt-2">{errors.confirmPassword.message}</p>
             )}
           </div>
 
           {/* CTA Section */}
-          <div className="flex flex-col gap-6 pt-8">
+          <div className="flex flex-col gap-4 mt-2">
             <button
               disabled={isPending}
-              className="group relative w-full bg-primary py-lg flex items-center justify-center overflow-hidden hover:brightness-110 transition-all active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-2 w-full bg-primary hover:bg-primary/90 text-on-primary rounded-lg py-3.5 flex items-center justify-center gap-3 group overflow-hidden relative active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(232,192,134,0.2)] hover:shadow-[0_0_30px_rgba(232,192,134,0.4)]"
               type="submit"
             >
-              {!isPending && (
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              )}
+              <span className="relative z-10 font-label-caps text-[12px] tracking-[0.2em] uppercase">
+                {isPending ? 'Authenticating...' : 'Create Account'}
+              </span>
               {isPending ? (
                 <Loader2 className="animate-spin relative z-10 text-on-primary" size={18} />
-              ) : (
-                <span className="font-label-caps font-semibold text-[12px] text-on-primary tracking-widest uppercase">Create Account</span>
+              ) : null}
+              {!isPending && (
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
               )}
             </button>
-            <Link className="group flex items-center justify-center gap-sm py-sm opacity-60 hover:opacity-100 transition-opacity" href="/login">
-              <span className="font-body-sm text-[14px] leading-[1.5] text-on-surface">Already have an account?</span>
-              <span className="font-label-caps font-semibold text-[12px] leading-[1.0] text-primary border-b border-primary/0 group-hover:border-primary/40 transition-all uppercase tracking-widest">Login</span>
-            </Link>
+            <div className="text-center mt-2">
+              <span className="font-body-sm text-[14px] text-on-surface-variant/60">Already have an account?</span>
+              <Link className="text-primary hover:text-primary/80 transition-colors duration-300 ml-2" href="/login">
+                Login
+              </Link>
+            </div>
           </div>
         </form>
         
-        {/* Footer Metadata */}
-        <div className="mt-12 pt-8 border-t border-outline-variant/10 flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="font-label-caps font-semibold text-[10px] text-outline-variant uppercase tracking-widest">Vault Security</span>
-            <span className="font-data-md font-medium text-[10px] text-outline tracking-widest">AES-256 ENCRYPTED</span>
-          </div>
-          <div className="h-8 w-[1px] bg-outline-variant/20"></div>
-          <div className="flex flex-col text-right">
-            <span className="font-label-caps font-semibold text-[10px] text-outline-variant uppercase tracking-widest">Protocol</span>
-            <span className="font-data-md font-medium text-[10px] text-outline tracking-widest">v4.0.2-ALPHA</span>
-          </div>
-        </div>
+
       </div>
     </div>
   );
