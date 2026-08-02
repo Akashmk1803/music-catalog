@@ -31,9 +31,9 @@ export function AiSummaryPanel({ summary, updatedAt, onRefresh, isRefetching }: 
   return (
     <section className="relative w-full">
       {/* Glow Effect */}
-      <div className="absolute -top-12 -left-8 w-64 h-64 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute -top-12 -left-8 w-64 h-64 bg-primary/5 rounded-full blur-[120px] pointer-events-none transition-opacity duration-1000"></div>
       
-      <div className="relative bg-surface-container-low/40 backdrop-blur-xxl rounded-xl p-8 sm:p-12 border-t border-white/10 shadow-xl overflow-hidden">
+      <div className="relative bg-surface-container-low/40 backdrop-blur-md rounded-xl p-8 sm:p-12 border border-white/5 shadow-xl overflow-hidden">
         <div className="flex flex-col gap-8 max-w-4xl relative z-10">
           
           <div className="flex flex-wrap items-center justify-between gap-6 mb-6">
@@ -45,30 +45,30 @@ export function AiSummaryPanel({ summary, updatedAt, onRefresh, isRefetching }: 
               <span className="font-data-md text-data-md text-on-surface-variant/40">— Generated {timeAgo}</span>
             </div>
             
-            <div className="flex items-center gap-sm">
+            <div className="flex items-center gap-2">
               <button 
                 onClick={handleCopy}
-                className="flex items-center gap-sm px-md py-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-on-surface-variant/60 hover:text-on-surface hover:bg-surface-container-high/40 transition-colors"
                 title="Copy Summary"
               >
-                {copied ? <Check size={16} className="text-primary" /> : <Copy size={16} />}
-                <span className="font-label-caps text-[10px] uppercase tracking-widest hidden sm:inline">Copy</span>
+                {copied ? <Check size={14} className="text-primary" /> : <Copy size={14} />}
+                <span className="font-label-caps text-[9px] uppercase tracking-[0.2em] hidden sm:inline">Copy</span>
               </button>
               <button 
                 onClick={onRefresh}
                 disabled={isRefetching}
-                className="flex items-center gap-sm px-md py-xs bg-surface-container-high rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-primary/80 hover:text-primary hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <RefreshCw size={16} className={isRefetching ? "animate-spin" : ""} />
-                <span className="font-label-caps text-[10px] uppercase tracking-widest hidden sm:inline">
-                  {isRefetching ? 'Generating...' : 'Generate New Insight'}
+                <RefreshCw size={14} className={isRefetching ? "animate-spin" : ""} />
+                <span className="font-label-caps text-[9px] uppercase tracking-[0.2em] hidden sm:inline">
+                  {isRefetching ? 'Generating...' : 'Regenerate'}
                 </span>
               </button>
             </div>
           </div>
 
-          <div className="mt-6">
-            <div className="font-headline-md text-headline-md text-on-surface leading-relaxed whitespace-pre-wrap">
+          <div className="mt-8">
+            <div className="font-body-lg text-[16px] leading-[1.8] text-on-surface/90 tracking-wide whitespace-pre-wrap">
               {summary}
             </div>
           </div>

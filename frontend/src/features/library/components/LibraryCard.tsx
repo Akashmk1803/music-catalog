@@ -3,6 +3,9 @@
 import { Edit, Trash2 } from 'lucide-react';
 import { LibraryItem } from '../types/library';
 import { RatingStars } from '@/components/ui/RatingStars';
+import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
+import { IconButton } from '@/components/ui/Button';
 
 interface LibraryCardProps {
   item: LibraryItem;
@@ -11,17 +14,15 @@ interface LibraryCardProps {
 }
 
 export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
-  // Determine badge styling based on status
-  let statusBadgeClasses = 'border-primary text-primary'; // default Completed
+  let badgeVariant: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'outline' = 'primary';
   if (item.status === 'Planned') {
-    statusBadgeClasses = 'border-on-surface-variant/40 text-on-surface-variant';
+    badgeVariant = 'outline';
   } else if (item.status === 'Listening') {
-    statusBadgeClasses = 'border-secondary text-secondary';
+    badgeVariant = 'success';
   }
 
   return (
-    <div className="group relative flex flex-col bg-surface-container-low/40 backdrop-blur-md rounded-xl border border-white/5 overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-      
+    <Card className="group relative flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <div className="relative aspect-square overflow-hidden bg-surface-container">
         {item.artworkUrl ? (
           <img 
@@ -39,24 +40,22 @@ export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
         
         {/* Hover Actions */}
         <div className="absolute top-4 right-4 flex flex-col gap-2 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-          <button 
+          <IconButton
+            icon={<Edit size={16} />}
             onClick={() => onEdit(item)}
-            className="w-10 h-10 bg-surface-container-highest/80 backdrop-blur-md rounded-full flex items-center justify-center text-on-surface/80 hover:text-primary hover:bg-surface-container-highest transition-all shadow-lg"
-          >
-            <Edit size={16} />
-          </button>
-          <button 
+            className="w-10 h-10 bg-surface-container-highest/80 backdrop-blur-md text-on-surface/80 hover:text-primary hover:bg-surface-container-highest shadow-lg"
+          />
+          <IconButton
+            icon={<Trash2 size={16} />}
             onClick={() => onDelete(item)}
-            className="w-10 h-10 bg-surface-container-highest/80 backdrop-blur-md rounded-full flex items-center justify-center text-on-surface/80 hover:text-error hover:bg-surface-container-highest transition-all shadow-lg"
-          >
-            <Trash2 size={16} />
-          </button>
+            className="w-10 h-10 bg-surface-container-highest/80 backdrop-blur-md text-on-surface/80 hover:text-error hover:bg-surface-container-highest shadow-lg"
+          />
         </div>
         
         <div className="absolute bottom-4 left-4">
-          <span className={`px-3 py-1 border font-label-caps text-[9px] uppercase tracking-[0.2em] rounded-full bg-surface-container-lowest/50 backdrop-blur-sm ${statusBadgeClasses}`}>
+          <Badge variant={badgeVariant} className="bg-surface-container-lowest/50 backdrop-blur-sm">
             {item.status || 'Planned'}
-          </span>
+          </Badge>
         </div>
       </div>
       
@@ -69,7 +68,7 @@ export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
         </div>
         
         <div className="flex flex-col">
-          <p className="font-body-sm text-on-surface-variant/80 italic truncate">{item.artist}</p>
+          <p className="font-body-sm text-[14px] text-on-surface-variant/80 italic truncate">{item.artist}</p>
           <div className="flex items-center gap-2 mt-4">
             <span className="font-label-caps text-[9px] text-on-surface-variant/50 uppercase tracking-[0.2em] truncate max-w-[120px]">
               {item.genre || 'Unknown'}
@@ -85,6 +84,6 @@ export function LibraryCard({ item, onEdit, onDelete }: LibraryCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

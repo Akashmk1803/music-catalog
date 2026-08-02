@@ -13,9 +13,9 @@ export function GenreDistributionChart({ data }: GenreDistributionChartProps) {
 
   return (
     <div className="w-full h-full flex flex-col min-h-[300px]">
-      <div className="flex justify-between items-end mb-xl">
-        <h3 className="font-headline-md text-headline-md text-on-surface">Genre Distribution</h3>
-        <span className="font-data-md text-data-md text-primary">Top 5 Segments</span>
+      <div className="flex justify-between items-end mb-6">
+        <h3 className="font-headline-md text-[20px] text-on-surface">Genre Distribution</h3>
+        <span className="font-label-caps text-[9px] text-on-surface-variant/60 uppercase tracking-[0.2em]">Top 5 Segments</span>
       </div>
       
       <div className="flex-1 w-full relative min-h-[250px]">

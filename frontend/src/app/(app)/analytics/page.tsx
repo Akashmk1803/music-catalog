@@ -105,7 +105,7 @@ export default function AnalyticsPage() {
         {/* Distribution Analysis */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Genre Distribution */}
-          <div className="lg:col-span-7 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm">
+          <div className="lg:col-span-7 bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 shadow-lg">
             {genresQuery.isError ? (
               <AnalyticsErrorState message="Could not load genre data." onRetry={genresQuery.refetch} />
             ) : genresQuery.data ? (
@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
           </div>
           
           {/* Rating Distribution */}
-          <div className="lg:col-span-5 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm">
+          <div className="lg:col-span-5 bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 shadow-lg">
             {ratingsQuery.isError ? (
               <AnalyticsErrorState message="Could not load rating data." onRetry={ratingsQuery.refetch} />
             ) : ratingsQuery.data ? (
@@ -125,7 +125,7 @@ export default function AnalyticsPage() {
 
         {/* Collection Growth & Status Distribution */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-8 bg-surface-container/30 p-xl border-t border-white/5 rounded-sm overflow-hidden relative h-full min-h-[400px]">
+          <div className="lg:col-span-8 bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 shadow-lg overflow-hidden relative h-full min-h-[400px]">
             {releaseYearsQuery.isError ? (
               <AnalyticsErrorState message="Could not load release year data." onRetry={releaseYearsQuery.refetch} />
             ) : releaseYearsQuery.data ? (
@@ -134,7 +134,7 @@ export default function AnalyticsPage() {
           </div>
           
           <div className="lg:col-span-4 flex flex-col gap-8">
-            <div className="bg-surface-container/30 p-xl border-t border-white/5 rounded-sm flex-1">
+            <div className="bg-surface-container-low/40 backdrop-blur-md p-8 rounded-xl border border-white/5 shadow-lg flex-1">
               {statusQuery.isError ? (
                 <AnalyticsErrorState message="Could not load status data." onRetry={statusQuery.refetch} />
               ) : statusQuery.data ? (
@@ -142,13 +142,12 @@ export default function AnalyticsPage() {
               ) : null}
             </div>
             
-            <div className="bg-primary p-xl border-t border-white/20 rounded-sm flex flex-col justify-between group cursor-pointer overflow-hidden relative border-2 border-primary h-[160px]">
+            <div className="bg-primary/10 p-8 rounded-xl border border-primary/20 flex flex-col justify-between group cursor-pointer overflow-hidden relative h-[160px] hover:bg-primary/20 transition-all duration-300">
               <div className="relative z-10">
-                <h4 className="font-label-caps text-label-caps text-on-primary uppercase tracking-widest mb-sm opacity-80">Export Report</h4>
-                <p className="font-headline-md text-headline-md text-on-primary">Full Catalog Audit</p>
+                <h4 className="font-label-caps text-[10px] text-primary uppercase tracking-[0.2em] mb-2">Export Report</h4>
+                <p className="font-headline-md text-[20px] text-primary">Full Catalog Audit</p>
               </div>
-              <span className="material-symbols-outlined text-on-primary text-4xl self-end group-hover:translate-x-2 transition-transform duration-300 relative z-10">arrow_forward</span>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+              <span className="material-symbols-outlined text-primary text-3xl self-end group-hover:translate-x-2 transition-transform duration-300 relative z-10">arrow_forward</span>
             </div>
           </div>
         </section>

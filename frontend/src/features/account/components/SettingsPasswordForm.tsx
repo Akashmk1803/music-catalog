@@ -4,6 +4,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { passwordSchema, PasswordFormValues } from '../schemas/accountSchemas';
 import { toast } from 'sonner';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card';
+import { FormField } from '@/components/ui/FormField';
+import { PasswordInput } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 
 export function SettingsPasswordForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<PasswordFormValues>({
@@ -18,51 +22,43 @@ export function SettingsPasswordForm() {
   };
 
   return (
-    <section className="bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5" id="security">
-      <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">Password & Security</h2>
-      <p className="font-body-sm text-on-surface-variant mb-8">Update your password to keep your account secure.</p>
+    <section id="security">
+      <Card>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <CardHeader>
+            <CardTitle>Password & Security</CardTitle>
+            <CardDescription>Update your password to keep your account secure.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-8 max-w-xl">
+            <FormField label="Current Password" error={errors.currentPassword?.message}>
+              <PasswordInput 
+                {...register('currentPassword')} 
+              />
+            </FormField>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 max-w-xl">
-        <div className="flex flex-col gap-xs">
-          <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Current Password</label>
-          <input 
-            type="password" 
-            {...register('currentPassword')} 
-            className="py-sm bg-transparent border-b border-outline-variant/20 focus:border-primary font-data-md text-on-surface outline-none transition-colors"
-          />
-          {errors.currentPassword && <span className="text-error text-body-sm mt-1">{errors.currentPassword.message}</span>}
-        </div>
+            <FormField label="New Password" error={errors.newPassword?.message}>
+              <PasswordInput 
+                {...register('newPassword')} 
+              />
+            </FormField>
 
-        <div className="flex flex-col gap-xs">
-          <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">New Password</label>
-          <input 
-            type="password" 
-            {...register('newPassword')} 
-            className="py-sm bg-transparent border-b border-outline-variant/20 focus:border-primary font-data-md text-on-surface outline-none transition-colors"
-          />
-          {errors.newPassword && <span className="text-error text-body-sm mt-1">{errors.newPassword.message}</span>}
-        </div>
-
-        <div className="flex flex-col gap-xs">
-          <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Confirm New Password</label>
-          <input 
-            type="password" 
-            {...register('confirmPassword')} 
-            className="py-sm bg-transparent border-b border-outline-variant/20 focus:border-primary font-data-md text-on-surface outline-none transition-colors"
-          />
-          {errors.confirmPassword && <span className="text-error text-body-sm mt-1">{errors.confirmPassword.message}</span>}
-        </div>
-
-        <div className="flex justify-end pt-8">
-          <button 
-            type="submit" 
-            disabled={isSubmitting}
-            className="px-xl py-md bg-surface-container-highest hover:bg-surface-container-highest/80 text-on-surface font-label-caps rounded-lg transition-all tracking-widest disabled:opacity-50 uppercase"
-          >
-            {isSubmitting ? 'Updating...' : 'Update Password'}
-          </button>
-        </div>
-      </form>
+            <FormField label="Confirm New Password" error={errors.confirmPassword?.message}>
+              <PasswordInput 
+                {...register('confirmPassword')} 
+              />
+            </FormField>
+          </CardContent>
+          <CardFooter className="justify-end pt-0">
+            <Button 
+              type="submit" 
+              variant="secondary"
+              loading={isSubmitting}
+            >
+              Update Password
+            </Button>
+          </CardFooter>
+        </form>
+      </Card>
     </section>
   );
 }

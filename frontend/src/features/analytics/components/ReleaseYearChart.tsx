@@ -13,10 +13,10 @@ export function ReleaseYearChart({ data }: ReleaseYearChartProps) {
 
   return (
     <div className="w-full h-full flex flex-col min-h-[400px]">
-      <div className="flex justify-between items-start mb-xxl relative z-10">
+      <div className="flex justify-between items-start mb-8 relative z-10">
         <div>
-          <h3 className="font-headline-md text-headline-md text-on-surface">Collection Growth</h3>
-          <p className="font-body-sm text-body-sm text-on-surface-variant">Asset distribution by release year</p>
+          <h3 className="font-headline-md text-[20px] text-on-surface">Collection Growth</h3>
+          <p className="font-label-caps text-[9px] text-on-surface-variant/60 uppercase tracking-[0.2em] mt-1">Asset distribution by release year</p>
         </div>
       </div>
       
@@ -36,13 +36,13 @@ export function ReleaseYearChart({ data }: ReleaseYearChartProps) {
               dataKey="year" 
               axisLine={false} 
               tickLine={false} 
-              tick={{ fill: '#d1c5b6', fontSize: 12, fontFamily: 'IBM Plex Mono' }} 
+              tick={{ fill: '#d1c5b6', fontSize: 12, fontFamily: 'Inter' }} 
               minTickGap={30}
             />
             <YAxis 
               axisLine={false} 
               tickLine={false} 
-              tick={{ fill: '#d1c5b6', fontSize: 12, fontFamily: 'IBM Plex Mono' }} 
+              tick={{ fill: '#d1c5b6', fontSize: 12, fontFamily: 'Inter' }} 
             />
             <Tooltip 
               cursor={{ stroke: 'rgba(232, 192, 134, 0.2)', strokeWidth: 2 }}

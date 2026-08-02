@@ -6,12 +6,16 @@ import { z } from 'zod';
 import { LibraryItem, LibraryItemUpdate } from '../types/library';
 import { useUpdateLibraryItem } from '../hooks/useLibraryQueries';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+  ModalDescription,
+  ModalFooter
+} from '@/components/ui/Modal';
+import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { FormField } from '@/components/ui/FormField';
 import { RatingStars } from '@/components/ui/RatingStars';
 import { useEffect } from 'react';
 
@@ -84,106 +88,96 @@ export function EditSongModal({ song, isOpen, onClose }: EditSongModalProps) {
   if (!song) return null;
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="bg-surface border border-outline-variant/20 text-on-surface w-full max-w-md gap-0 p-0 overflow-hidden">
-        <DialogHeader className="p-8 pb-6 border-b border-white/5 bg-surface-container-low/40">
-          <DialogTitle className="font-headline-md text-[22px] text-on-surface">
+    <Modal open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <ModalContent className="max-w-md">
+        <ModalHeader className="border-b border-white/5 bg-surface-container-low/40">
+          <ModalTitle>
             Edit &quot;{song?.title}&quot;
-          </DialogTitle>
-          <DialogDescription className="text-body-md text-on-surface-variant">
+          </ModalTitle>
+          <ModalDescription>
             Update library information for &quot;{song.title}&quot;.
-          </DialogDescription>
-        </DialogHeader>
+          </ModalDescription>
+        </ModalHeader>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="p-8 flex flex-col gap-6 max-h-[70vh] overflow-y-auto">
-          <div className="space-y-2">
-            <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Title</label>
-            <input
-              {...register('title')}
-              className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
-            />
-            {errors.title && <p className="text-error text-body-sm">{errors.title.message}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Artist</label>
-            <input
-              {...register('artist')}
-              className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
-            />
-            {errors.artist && <p className="text-error text-body-sm">{errors.artist.message}</p>}
-          </div>
-
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Genre</label>
-              <input
-                {...register('genre')}
-                className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+          <div className="p-8 flex flex-col gap-6 max-h-[60vh] overflow-y-auto">
+            <FormField label="Title" error={errors.title?.message}>
+              <Input
+                {...register('title')}
               />
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Year</label>
-              <input
-                type="number"
-                {...register('releaseYear')}
-                className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm"
-              />
-            </div>
-          </div>
+            </FormField>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Status</label>
-              <select
-                {...register('status')}
-                className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm appearance-none"
-              >
-                <option value="Completed">Completed</option>
-                <option value="Listening">Listening</option>
-                <option value="Planned">Planned</option>
-              </select>
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Rating</label>
-              <div className="h-[46px] flex items-center bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg px-4 shadow-sm">
-                <RatingStars
-                  rating={ratingValue}
-                  interactive={true}
-                  size={20}
-                  onRate={(val) => setValue('rating', val, { shouldDirty: true })}
+            <FormField label="Artist" error={errors.artist?.message}>
+              <Input
+                {...register('artist')}
+              />
+            </FormField>
+
+            <div className="grid grid-cols-2 gap-6">
+              <FormField label="Genre">
+                <Input
+                  {...register('genre')}
                 />
-              </div>
+              </FormField>
+              <FormField label="Year">
+                <Input
+                  type="number"
+                  {...register('releaseYear')}
+                />
+              </FormField>
             </div>
+
+            <div className="grid grid-cols-2 gap-6">
+              <FormField label="Status">
+                <select
+                  {...register('status')}
+                  className="w-full bg-transparent border-b border-white/10 py-2 font-body-md text-[14px] text-on-surface outline-none transition-colors focus:border-primary disabled:opacity-50 appearance-none"
+                >
+                  <option value="Completed" className="bg-surface">Completed</option>
+                  <option value="Listening" className="bg-surface">Listening</option>
+                  <option value="Planned" className="bg-surface">Planned</option>
+                </select>
+              </FormField>
+              <FormField label="Rating">
+                <div className="h-[37px] flex items-center border-b border-white/10 px-0">
+                  <RatingStars
+                    rating={ratingValue}
+                    interactive={true}
+                    size={20}
+                    onRate={(val) => setValue('rating', val, { shouldDirty: true })}
+                  />
+                </div>
+              </FormField>
+            </div>
+
+            <FormField label="Notes">
+              <textarea
+                {...register('notes')}
+                rows={3}
+                className="w-full bg-transparent border-b border-white/10 py-2 font-body-md text-[14px] text-on-surface outline-none transition-colors focus:border-primary disabled:opacity-50 resize-none"
+              />
+            </FormField>
           </div>
 
-          <div className="space-y-2">
-            <label className="text-[10px] font-label-caps text-on-surface-variant/60 uppercase tracking-[0.2em]">Notes</label>
-            <textarea
-              {...register('notes')}
-              rows={3}
-              className="w-full bg-surface-container-lowest/50 border-b border-white/10 rounded-t-lg p-3 text-on-surface text-body-md focus:outline-none focus:bg-surface-container-low/60 focus:border-primary/50 transition-all shadow-sm resize-none"
-            />
-          </div>
-
-          <div className="mt-4 pt-6 border-t border-white/5 flex justify-end gap-4">
-            <button
+          <ModalFooter className="border-t border-white/5 bg-surface-container-low/20">
+            <Button
               type="button"
               onClick={onClose}
-              className="px-6 py-2.5 text-on-surface-variant/80 hover:text-on-surface font-label-caps text-xs uppercase tracking-[0.2em] transition-colors"
+              variant="ghost"
             >
               Cancel
-            </button>
-            <button
+            </Button>
+            <Button
               type="submit"
               disabled={isPending}
-              className="px-6 py-2.5 bg-primary/10 text-primary border border-primary/20 font-label-caps text-xs rounded-lg hover:bg-primary hover:text-on-primary transition-all uppercase tracking-[0.2em] disabled:opacity-50"
+              variant="outline"
+              loading={isPending}
             >
-              {isPending ? 'Saving...' : 'Save Changes'}
-            </button>
-          </div>
+              Save Changes
+            </Button>
+          </ModalFooter>
         </form>
-      </DialogContent>
-    </Dialog>
+      </ModalContent>
+    </Modal>
   );
 }

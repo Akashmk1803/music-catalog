@@ -1,21 +1,24 @@
+import { Card } from '@/components/ui/Card';
+import { Skeleton } from '@/components/ui/Skeleton';
+
 export function LibrarySkeleton() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-xxl mt-xxl">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 mt-16">
       {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-        <div key={i} className="skeleton-card flex flex-col bg-surface-container-low/40 backdrop-blur-md rounded-xl border border-white/5 overflow-hidden shadow-lg animate-pulse">
-          <div className="aspect-square w-full bg-surface-container-high/40"></div>
-          <div className="p-lg space-y-md">
+        <Card key={i} className="flex flex-col overflow-hidden">
+          <Skeleton className="aspect-square w-full rounded-none" />
+          <div className="p-8 space-y-6">
             <div className="flex justify-between items-start">
-              <div className="h-6 w-3/4 bg-surface-container-highest rounded"></div>
-              <div className="h-4 w-16 bg-surface-container-highest rounded"></div>
+              <Skeleton className="h-6 w-3/4" />
+              <Skeleton className="h-4 w-16" />
             </div>
             
-            <div className="space-y-xs">
-              <div className="h-4 w-1/2 bg-surface-container-highest/60 rounded"></div>
-              <div className="h-3 w-1/3 bg-surface-container-highest/40 rounded"></div>
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-1/2" />
+              <Skeleton className="h-3 w-1/3" />
             </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   );

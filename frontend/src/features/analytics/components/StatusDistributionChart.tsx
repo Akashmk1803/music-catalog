@@ -20,7 +20,7 @@ export function StatusDistributionChart({ data }: StatusDistributionChartProps) 
 
   return (
     <div className="w-full h-full flex flex-col min-h-[300px]">
-      <h3 className="font-headline-md text-headline-md text-on-surface mb-xl">Status Distribution</h3>
+      <h3 className="font-headline-md text-[20px] text-on-surface mb-6">Status Distribution</h3>
       
       <div className="flex-1 w-full relative min-h-[200px]">
         <ResponsiveContainer width="100%" height="100%">

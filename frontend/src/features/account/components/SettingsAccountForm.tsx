@@ -4,6 +4,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { accountSchema, AccountFormValues } from '../schemas/accountSchemas';
 import { toast } from 'sonner';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card';
+import { FormField } from '@/components/ui/FormField';
+import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
 
 export function SettingsAccountForm() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<AccountFormValues>({
@@ -24,64 +28,48 @@ export function SettingsAccountForm() {
   return (
     <section className="relative group" id="account">
       <div className="absolute -inset-px bg-gradient-to-r from-primary/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="relative bg-surface-container-low/45 backdrop-blur-xxl p-8 rounded-xl shadow-xl border-t border-white/5">
-        
-        <div className="flex justify-between items-start mb-8">
-          <div>
-            <h2 className="font-headline-md text-headline-md text-on-surface mb-xs">Account Profile</h2>
-            <p className="font-body-sm text-on-surface-variant">Manage your professional credentials and identity.</p>
-          </div>
-        </div>
-
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div className="flex flex-col gap-xs">
-              <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Full Name</label>
-              <input 
-                type="text" 
-                {...register('fullName')} 
-                className="py-sm bg-transparent border-b border-outline-variant/20 focus:border-primary font-data-md text-on-surface outline-none transition-colors"
-                placeholder="Enter full name"
-              />
-              {errors.fullName && <span className="text-error text-body-sm mt-1">{errors.fullName.message}</span>}
+      <Card className="relative">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <CardHeader>
+            <CardTitle>Account Profile</CardTitle>
+            <CardDescription>Manage your professional credentials and identity.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <FormField label="Full Name" error={errors.fullName?.message}>
+                <Input 
+                  type="text" 
+                  {...register('fullName')} 
+                  placeholder="Enter full name"
+                />
+              </FormField>
+              <FormField label="Email Address" error={errors.email?.message}>
+                <Input 
+                  type="email" 
+                  {...register('email')} 
+                  placeholder="user@catalog.ai"
+                />
+              </FormField>
+              <FormField label="Affiliation">
+                <Input 
+                  type="text" 
+                  {...register('affiliation')} 
+                  placeholder="e.g. Sterling Audio Group"
+                />
+              </FormField>
             </div>
-
-            <div className="flex flex-col gap-xs">
-              <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Email Address</label>
-              <input 
-                type="email" 
-                {...register('email')} 
-                className="py-sm bg-transparent border-b border-outline-variant/20 focus:border-primary font-data-md text-on-surface outline-none transition-colors"
-                placeholder="user@catalog.ai"
-              />
-              {errors.email && <span className="text-error text-body-sm mt-1">{errors.email.message}</span>}
-            </div>
-
-            <div className="flex flex-col gap-xs">
-              <label className="text-[10px] font-label-caps text-on-surface-variant uppercase tracking-widest">Affiliation</label>
-              <input 
-                type="text" 
-                {...register('affiliation')} 
-                className="py-sm bg-transparent border-b border-outline-variant/20 focus:border-primary font-data-md text-on-surface outline-none transition-colors"
-                placeholder="e.g. Sterling Audio Group"
-              />
-            </div>
-            
-          </div>
-
-          <div className="flex justify-end pt-8">
-            <button 
+          </CardContent>
+          <CardFooter className="justify-end pt-0">
+            <Button 
               type="submit" 
-              disabled={isSubmitting}
-              className="px-xl py-md bg-surface-container-highest hover:bg-surface-container-highest/80 text-on-surface font-label-caps rounded-lg transition-all tracking-widest disabled:opacity-50 uppercase"
+              variant="secondary"
+              loading={isSubmitting}
             >
-              {isSubmitting ? 'Saving...' : 'Save Changes'}
-            </button>
-          </div>
+              Save Changes
+            </Button>
+          </CardFooter>
         </form>
-
-      </div>
+      </Card>
     </section>
   );
 }
